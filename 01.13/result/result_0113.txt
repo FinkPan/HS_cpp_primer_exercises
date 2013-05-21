@@ -1,0 +1,23 @@
+result_0113.cpp:2:9: 警告： extended initializer lists only available with -std=c++11 or -std=gnu++11 [默认启用]
+result_0113.cpp:4:5: 错误： expected primary-expression before ‘return’
+result_0113.cpp:4:5: 错误： expected ‘}’ before ‘return’
+result_0113.cpp:4:5: 错误： expected ‘)’ before ‘return’
+result_0113.cpp:5:1: 错误： expected declaration before ‘}’ token
+
+result_0113.cpp: 在函数‘int main()’中:
+result_0113.cpp:14:48: 错误： expected ‘;’ before ‘:’ token
+
+result_0113.cpp: 在函数‘int main()’中:
+result_0113.cpp:23:18: 错误： ‘Read’在此作用域中尚未声明
+result_0113.cpp:23:23: 错误： expected ‘;’ before ‘each’
+
+result_0113.cpp: 在函数‘int main()’中:
+result_0113.cpp:32:1: 错误： expected ‘;’ before ‘}’ token
+
+result_0113.cpp: 在函数‘int main()’中:
+result_0113.cpp:39:9: 错误： 从类型‘const char*’到类型‘int’的转换无效 [-fpermissive]
+
+
+result_0113.cpp: 在函数‘int main()’中:
+result_0113.cpp:47:5: 错误： ‘i’在此作用域中尚未声明
+result_0113.cpp:48:5: 错误： ‘cout’在此作用域中尚未声明
