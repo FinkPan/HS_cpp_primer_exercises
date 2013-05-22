@@ -1,0 +1,5 @@
+下列哪些语句合法？对于那些不合法的，请解释为什么不合法。
+(a) const int buf;
+(b) int cnt = 0;
+    const int sz = cnt;
+(c) cnt++; sz++;

@@ -1,0 +1,7 @@
+假设 calc 是一个返回 double 对象的函数。下面哪些是
+非法定义?改正所有的非法定义。
+(a) int car = 1024, auto = 2048;
+(b) int ival = ival;
+(c) std::cin >> int input_value;
+(d) double salary = wage = 9999.99;
+(e) double calc = calc();

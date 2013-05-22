@@ -1,0 +1,9 @@
+编译以下程序，确定你的编译器是否会警告遗漏了类定义后面的分号。
+class Foo {
+    // empty
+} // Note: no semicolon
+int main()
+{
+    return 0;
+}
+如果编译器的诊断结果难以理解，记住这些信息以备后用。
