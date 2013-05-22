@@ -3,24 +3,27 @@
 #include "Sales_item.h"
 int main()
 {
-    Sales_item item1,itemTemp,itemTotal;
+    Sales_item trans,itemTotal;
     std::cout << "please input the book's ISBN, how much it had been sold,and it's price;" << std::endl;
-    std::cin >> item1;
-    itemTemp = item1;	//itemTemp 用来标记ISBN是否相同。
-    while(itemTemp.same_isbn(item1))
+    std::cin >> itemTotal;
+    while (std::cin >> trans)
     {
-			 itemTotal += item1;
-			 std::cin >> item1;
-    }
+        if (itemTotal.same_isbn(trans))
+            itemTotal = itemTotal + trans;
+        else
+            std::cout << "Please input the books that has the same ISBN." << std::endl;
+
+     }
+
 	std::cout << itemTotal << std::endl;
     return 0;
 }
 
 please input the book's ISBN, how much it had been sold,and it's price;
-0-201-78345-X 2 25.00
-0-201-78345-X 6 25.00
-0-201-78345-X 1 25.6 
-0-201-78345-X 10 24.86
-0-201-78345-b 2 36.2 
-
-	19	474.2	24.9579
+0-5-8754-x 2 30.00
+0-5-8754-x 3 29.89
+0-5-8754-n 10 20.00
+Please input the books that has the same ISBN.
+q
+q
+0-5-8754-x	5	149.67	29.934
