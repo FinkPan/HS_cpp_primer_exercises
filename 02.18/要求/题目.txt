@@ -1,0 +1,4 @@
+解释下列例子中 name 的意义
+extern std::string name;
+std::string name("exercise 3.5a");
+extern std::string name("exercise 3.5a");

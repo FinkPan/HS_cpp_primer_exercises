@@ -1,0 +1,5 @@
+(a) 中的定义和 (b) 中的赋值存在哪些不同？哪些是非法的？
+(a) int ival = 0;
+    const int &ri = 0;
+(b) ival = ri;
+    ri = ival;

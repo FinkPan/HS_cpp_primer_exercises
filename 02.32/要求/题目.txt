@@ -1,0 +1,5 @@
+下列声明和定义哪些应该放在头文件中？哪些应该放在源文件中？请解释原因。
+(a) int var;
+(b) const double pi = 3.1416;
+(c) extern int total = 255;
+(d) const double sq2 = sqrt(2.0);

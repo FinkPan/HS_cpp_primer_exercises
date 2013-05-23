@@ -1,0 +1,7 @@
+下面哪些（如果有）名字是非法的？更正每个非法的标
+识符名字。
+(a) int double = 3.14159; 
+(b) char _;
+(c) bool catch-22; 
+(d) char 1_or_2 ='1';
+(e) float Float = 3.14f;

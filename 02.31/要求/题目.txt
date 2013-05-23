@@ -1,0 +1,5 @@
+判别下列语句哪些是声明，哪些是定义，请解释原因。
+(a) extern int ix = 1024;
+(b) int iy;
+(c) extern int iz;
+(d) extern const int &ri;

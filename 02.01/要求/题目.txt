@@ -1,0 +1,1 @@
+int、long 和 short 类型之间有什么差别？
