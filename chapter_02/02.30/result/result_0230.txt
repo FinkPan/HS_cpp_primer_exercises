@@ -1,0 +1,12 @@
+定义表示下列类型的类的数据成员：
+(a) a phone number
+(b) an address
+(c) an employee or a company
+(d) a student at a university
+
+答：
+(a) long nPhoneNumber;
+(b) std::string strAddress;
+(c) std::string strPost;
+(d) std::string strCharacter;
+
