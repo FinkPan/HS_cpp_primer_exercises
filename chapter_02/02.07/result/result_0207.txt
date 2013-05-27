@@ -1,0 +1,9 @@
+解释下列字面值常量的不同之处。
+(a) 'a',L 'a',"a",L"a"
+(b) 10, 10u, 10L, 10uL, 012, 0xC
+(c) 3.14, 3.14f, 3.14L
+
+答：
+(a)'a' 为字符a；	L 'a'为wchar_t的宽字符a；	"a"为字符串；	L"a"为宽字符串a。
+(b)10为十进制10；	10u为 unsigned 类型的10；	10L为long类型；	10uL为unsigned long 类型；	012为八进制数12；	0xC为十六进制说C；
+(c)3.14 为double；	3.14f为float类型；	3.14L为long double类型
