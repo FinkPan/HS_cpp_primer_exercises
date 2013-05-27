@@ -1,0 +1,14 @@
+假设 calc 是一个返回 double 对象的函数。下面哪些是非法定义?改正所有的非法定义。
+(a) int car = 1024, auto = 2048;
+(b) int ival = ival;
+(c) std::cin >> int input_value;
+(d) double salary = wage = 9999.99;
+(e) double calc = calc();
+
+答：
+
+(a) 非法定义 auto 是关键字，最好改用其他。
+(b) 非法定义 不能用变量初始化变量自己。 可以改为 ival = 0;
+(c) 非法定义 不能在右值定义变量。可以改为 int input_value; std::cin >> input_value;
+(d) 非法定义 wage 为未定义变量。
+(e) 非法定义 calc 和 函数 calc()同名；编译器提示calc不能作为函数名。
