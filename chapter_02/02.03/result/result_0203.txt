@@ -1,0 +1,4 @@
+如果在某机器上 short 类型占 16 位，那么可以赋给short 类型的最大数是什么？unsigned short 类型的最大数又是什么？
+
+答：
+该机器上short类型最大数是32,767.unsigned short 类型的最大数65 535.
