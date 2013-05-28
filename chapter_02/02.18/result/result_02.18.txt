@@ -1,0 +1,9 @@
+解释下列例子中 name 的意义
+extern std::string name;
+std::string name("exercise 3.5a");
+extern std::string name("exercise 3.5a");
+
+答：
+extern std::string name; 声明 name 为string类型
+std::string name("exercise 3.5a"); 声明并定义 name 为 string,并初始化为"exercise 3.5a"
+extern std::string name("exercise 3.5a"); 和上面一样。
