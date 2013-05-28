@@ -1,0 +1,12 @@
+下列哪些定义是非法的？为什么？如何改正？
+(a) int ival = 1.01;
+(b) int &rval1 = 1.01;
+(c) int &rval2 = ival;
+(d) const int &rval3 = 1;
+
+答：
+(a) 合法 但ival丢失精度。
+(b) 非法 initializer must be an object; 可以改为:const int &rval1 = 1.10;
+(c) 合法
+(d) 合法
+
