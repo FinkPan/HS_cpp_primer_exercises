@@ -1,0 +1,12 @@
+下列程序合法吗？
+int sum = 0;
+for (int i = 0; i != 10; ++i)
+    sum += i;
+std::cout << "Sum from 0 to " << i
+          << " is " << sum << std::endl;
+
+答：
+不合法。i的作用域只在for循环里，所以
+		std::cout << "Sum from 0 to " << i
+          		  << " is " << sum << std::endl;
+中的i是未定义的。
