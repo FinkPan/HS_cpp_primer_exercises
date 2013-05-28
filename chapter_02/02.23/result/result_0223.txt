@@ -1,0 +1,11 @@
+下列哪些语句合法？对于那些不合法的，请解释为什么不合法。
+(a) const int buf;
+(b) int cnt = 0;
+    const int sz = cnt;
+(c) cnt++; sz++;
+
+答：
+(a) 不合法 const 修饰的变量为常量，buf必须初始化。
+(b) 不合法 cnt 是变量，不能为 const 修饰的变量初始化。
+(c) 不合法 sz是被const修饰的常量，不能用自增操作。
+
