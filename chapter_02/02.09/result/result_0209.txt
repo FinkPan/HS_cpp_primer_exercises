@@ -1,0 +1,8 @@
+下列哪些（如果有）是非法的？
+(a) "Who goes with F\145rgus?\012"
+(b) 3.14e1L (c) "two" L"some"
+(d) 1024f (e) 3.14UL
+(f) "multiple line
+comment" 
+
+答（f）是错误的，少来个 \ 来换行。
