@@ -9,3 +9,24 @@
 (b) 不合法 cnt 是变量，不能为 const 修饰的变量初始化。
 (c) 不合法 sz是被const修饰的常量，不能用自增操作。
 
+修改：
+用程序验证：
+	for(int i=0; i < 3; i++)
+	{
+		int cnt = i;
+    	const int sz = cnt;
+    	std::cout << sz;
+    }
+
+程序编译成功并输出： 0 1 2
+
+	for(int i=0; i < 3; i++)
+	{
+	int cnt = i;
+    const int sz = cnt;
+    sz = 9;					//错误，不能直接赋值给const常量。
+    std::cout << sz;
+    }
+
+体会：
+const 可以用变量赋值，通过修改变量的值来修改const常量的值。但不能直接赋值给const常量。
