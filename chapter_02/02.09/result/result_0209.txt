@@ -6,3 +6,14 @@
 comment" 
 
 答（f）是错误的，少来个 \ 来换行。
+
+更改：
+（c） 错误： 请求从‘const wchar_t [8]’转换到非标量类型‘std::string {aka std::basic_string<char>}’|
+（d） 错误： 整数常量的“f”后缀无效|
+（e） 错误： 浮点常量的“UL”后缀无效|
+
+由此可知：
+（c） char 和 wchar_t 不能混合
+（d） 1024 被视为整型
+（e） 3.14UL "UL"为无效后缀
+
