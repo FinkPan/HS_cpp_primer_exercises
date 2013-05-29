@@ -10,3 +10,40 @@
 (c) std::string strPost;
 (d) std::string strCharacter;
 
+修改：
+Limbo 提示：要求是定义“表示下列类型的类”的数据成员。即a、b、c、d都是一个类。
+
+(a) class PhoneNumber
+	{
+	public: 
+		std::string getNumber();
+		void setNumber(Long PhoneNumber);
+	private: 
+		Long PhoneNumber;
+	}
+
+(b) class Address
+	{
+	public: 
+		
+	private: 
+		std::string strHouseName;
+        std::string strAddress;
+	}
+
+(c) class Post
+	{
+	public: 
+		
+	private: 
+		std::string strPost;     
+	}
+
+(d) class strCharacter
+	{
+	public: 
+		
+	private: 
+		std::string strName;
+        int nID;   
+	}
