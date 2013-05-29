@@ -1,0 +1,7 @@
+列举出三种初始化 string 对象的方法。
+
+答：
+
+1.string s1 = "hello";
+2.string s2("lucky star");
+3.string s3(3,'b');
