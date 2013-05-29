@@ -12,3 +12,7 @@
 (c) 非法定义 不能在右值定义变量。可以改为 int input_value; std::cin >> input_value;
 (d) 非法定义 wage 为未定义变量。
 (e) 非法定义 calc 和 函数 calc()同名；编译器提示calc不能作为函数名。
+
+修改：
+
+用程序验证 （b）是合法的，输出其值为 0
