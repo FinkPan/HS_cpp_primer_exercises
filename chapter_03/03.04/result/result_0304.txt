@@ -1,0 +1,23 @@
+s 和 s2 的值分别是什么？
+string s;
+int main() {
+  string s2;
+}
+
+答：
+s 为空
+s2 为空
+
+程序验证：
+#include <iostream>
+#include <string>
+std::string s;
+int main()
+{
+    std::string s2;
+	std::cout << "s= " << s << std::endl;
+	std::cout << "s2= "<< s2<< std::endl;
+    return 0;
+}
+
+输出都为空
