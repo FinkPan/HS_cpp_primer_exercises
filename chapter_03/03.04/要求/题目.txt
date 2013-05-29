@@ -1,0 +1,5 @@
+s 和 s2 的值分别是什么？
+string s;
+int main() {
+  string s2;
+}

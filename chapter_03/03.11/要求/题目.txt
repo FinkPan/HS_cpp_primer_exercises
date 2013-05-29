@@ -1,0 +1,4 @@
+下面哪些 vector 定义不正确？
+(a) vector< vector<int> > ivec;
+(b) vector<string> svec = ivec;
+(c) vector<string> svec(10, "null");

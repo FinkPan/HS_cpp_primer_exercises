@@ -1,0 +1,7 @@
+下列每个 vector 对象中元素个数是多少？各元素的值是什么？
+(a) vector<int> ivec1;
+(b) vector<int> ivec2(10);
+(c) vector<int> ivec3(10, 42);
+(d) vector<string> svec1;
+(e) vector<string> svec2(10);
+(f) vector<string> svec3(10, "hello");
