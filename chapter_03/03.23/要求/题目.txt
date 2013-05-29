@@ -1,0 +1,5 @@
+解释下面每个 bitset 对象包含的位模式：
+(a) bitset<64> bitvec(32);
+(b) bitset<32> bv(1010101);
+(c) string bstr; cin >> bstr;
+bitset<8>bv(bstr);

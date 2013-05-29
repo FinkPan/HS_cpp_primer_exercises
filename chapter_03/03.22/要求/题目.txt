@@ -1,0 +1,3 @@
+What happens if we compute mid as follows:
+vector<int>::iterator mid = (vi.begin() +
+vi.end()) / 2;
