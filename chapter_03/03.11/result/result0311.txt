@@ -1,0 +1,43 @@
+下面哪些 vector 定义不正确？
+(a) vector< vector<int> > ivec;
+(b) vector<string> svec = ivec;
+(c) vector<string> svec(10, "null");
+
+答:
+(a) ivec 为 vector<int> 类型的vector类型. 可以理解为类似二维数组吧.
+	
+程序验证:
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	vector< vector<int> > ivec;
+	vector<int> ivec1(10,1);
+	vector<int> ivec2(10,2);
+	vector<int> ivec3(10,3);
+	
+
+	ivec.push_back(ivec1);
+	ivec.push_back(ivec2);
+	ivec.push_back(ivec3);
+
+	for (vector<vector<int>>::size_type index = 0; index != ivec.size(); ++index)
+	{
+		for(vector<int>::size_type i = 0; i != ivec[index].size(); ++i)
+		{
+			cout << ivec[index][i] << endl;
+
+		}
+	}
+	
+	system("pause");
+	return 0;
+}
+
+输出和预期一样.
+
+(b)该定义是不正确的,vector初始化没有 直接赋值的.
+(c)正确,将svec初始化为10个 "null"
