@@ -18,7 +18,7 @@ int main()
 		cin >> s2;
 }
 
-程序输出 空字符串
+程序输出 空字符串  //用Visual Studio 2010编译成功,但运行时出错: Debug Assertion Failed! 
 
 int main()
 {
@@ -32,3 +32,24 @@ int main()
 其原因为:
 string 类型通过下标操作符（[ ]）来访问 string 对象中的单个字符。下 
 标操作符需要取一个 size_type 类型的值，来标明要访问字符的位置。
+
+2013年6月7日修改
+之前用的是Code::Block 来编译和运行,竟然可以运行.
+用Visual Studio 2010编译成功,但运行时出错: Debug Assertion Failed!  
+Expression: string subscript out of range
+说明string下标越界了. 详细可以参考书本"C+++Primer+第四版中文版" P83,警告.
+
+这说明
+int main()
+{
+	string s;			//没有初始化!
+	cout << s[0] << endl;
+}
+将string s;放到main()函数前面也出错
+
+string s;			//一样出错
+int main()
+{
+	cout << s[0] << endl;
+	return 0;
+}
