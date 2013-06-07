@@ -1,0 +1,28 @@
+//编一个程序，从 string 对象中去掉标点符号。要求输入到程序的字符串必须含有标点符号，输出结果则是去掉标点符号后的 string 对象。
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	string strin;
+	cout << "please input same sentences with punctuation: " << endl;
+	getline(cin,strin);		//istream& getline (istream& is, string& str);  用getline读取一整行
+	for (string::size_type index = 0; index != strin.size(); ++index)
+	{
+		if (ispunct(strin[index]))		//发现用中文时 ispunct()函数出错, 提示ispunct()只能 c+1<=256 如果是中文就越界了吧
+		{
+			strin.erase(index,1);	// string& erase (size_t pos = 0, size_t len = npos); 
+
+		}
+	}
+	cout << strin << endl;
+	system("pause");
+	return 0;
+}
+
+please input same sentences with punctuation:
+string& area (size_t pos = 0, size_t len = npos);
+string area sizet pos  0 sizet len  npos;
+请按任意键继续. . .
