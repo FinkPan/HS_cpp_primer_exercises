@@ -1,0 +1,16 @@
+﻿下列每个 vector 对象中元素个数是多少？各元素的值是什么？
+(a) vector<int> ivec1;
+(b) vector<int> ivec2(10);
+(c) vector<int> ivec3(10, 42);
+(d) vector<string> svec1;
+(e) vector<string> svec2(10);
+(f) vector<string> svec3(10, "hello");
+
+答:
+
+(a)ivec1 为默认构造函数初始化,即ivec1为空
+(b)ivec2 由 vector<T> v4(n); 知 ivec2为含有10个为0的元素.
+(c)ivec3 有10个元素,其值全为42
+(d)svec1 为默认构造函数初始化,即ivec1为空
+(e)svec2 有10个元素,其值全为"";
+(f)svec3 有10个元素,其值全为"hello";
