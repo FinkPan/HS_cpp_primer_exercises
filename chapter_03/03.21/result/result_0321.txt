@@ -1,0 +1,9 @@
+﻿何时使用 const 迭代器的？又在何时使用 const_iterator？解释两者的区别。
+
+答:
+const 迭代器 用在只想改变容器的值,但不能改变其指向的内容.
+const_iterator  用在只读取容器的内容,但不能改变其值.
+
+区别:
+const 迭代器: 不能改变其指向的内容,const_iterator不能改变其指向内容的值.
+const 迭代器: 可以改变其指向内容的值,const_iterator可以改变其指向内容.
