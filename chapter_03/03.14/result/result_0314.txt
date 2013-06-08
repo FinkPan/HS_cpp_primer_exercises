@@ -1,0 +1,40 @@
+﻿读入一段文本到 vector 对象，每个单词存储为 vector中的一个元素。
+把 vector 对象中每个单词转化为大写字母。输出 vector 对象中转化后的元素，每八个单词为一行输出。
+
+
+#include "stdafx.h"		//该头文件为Visual Studio2010编译器的.
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	vector<string> strvec;
+	//vector<string> strUppervec;
+	string str;
+	cout << "input a sequence of text:(Ctrl+Z for ending input.) " << endl;
+	//getline(cin,str);
+	while(cin>>str)		//一直想找个判断回车结束输入的方法,但查了相关资料发现,终止输入方法是Ctrl+Z.
+	{
+		strvec.push_back(str);
+	}
+	for (vector<string>::size_type index_vec = 0; index_vec != strvec.size(); ++index_vec)	//遍历整个vector
+	{
+		str = strvec[index_vec];
+		for (string::size_type index_str = 0; index_str != str.size(); ++index_str)	//遍历整个string,并转换为大写字母
+		{
+			 str[index_str] = toupper(str[index_str]);	//toupper(c) 函数如果c是小写字母,则返回其大写字母形式,否则直接返回c
+	    }
+		strvec[index_vec] = str;	//将转换后的string放回vector里
+	}
+	for (vector<string>::size_type index_vec = 0; index_vec != strvec.size(); ++index_vec)	//遍历整个vector,并按要求打印出来
+	{
+		cout << strvec[index_vec] << " ";
+		if ((index_vec+1) % 8 ==0)	//每8个单词输出一个回车.由于index_vec从0开始,所以加个1
+			cout << endl; 
+	}
+
+	system("pause");	//暂停屏幕,方便查看结果.
+	return 0;
+}
