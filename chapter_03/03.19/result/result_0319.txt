@@ -1,0 +1,28 @@
+﻿验证习题 3.18 的程序，输出 vector 的所有元素。
+
+#include "stdafx.h"		//该头文件为Visual Studio2010编译器的.
+#include <iostream>
+#include <vector>
+#include <iterator>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	
+	vector<int> ivec(10,54);
+	cout << "before x 2 vector:\n" ;
+	for (vector<int>::iterator iter = ivec.begin(); iter != ivec.end(); ++iter)
+	{
+		cout << *iter << " ";
+		*iter *= 2;
+	}
+	cout <<  "\nafter x 2 vector:\n" ;
+	for (vector<int>::iterator iter = ivec.begin(); iter != ivec.end(); ++iter)
+	{
+		cout << *iter << " ";
+	}
+
+
+	system("pause");	//暂停屏幕,方便查看结果.
+	return 0;
+}
