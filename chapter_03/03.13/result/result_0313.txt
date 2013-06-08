@@ -1,0 +1,75 @@
+读一组整数到 vector 对象，计算并输出每对相邻元素的和。如果读入元素个数为奇数，则提示用户最后一个元素没有求和，并输出其值。然后修改程序：头尾元素两两配对（第一个和最后一个，第二个和倒数第二个，以此类推），计算每对元素的和，并输出。
+
+
+相邻元素求和
+
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	vector<int> ivec;
+	int n;
+	cout << "input a group of integer: (any letters for end)" << endl;
+	while(cin >> n)
+	{
+		ivec.push_back(n);
+	}
+	for (vector<int>::size_type index = 0; index < ivec.size();index  = index + 2)	//设置步长为2,因此不能用index != ivec.size().作为测试条件.
+	{
+		if ((ivec.size() % 2 != 0) && (index == ivec.size()-1))	//判断输入个数是否为奇数,并提示最后一个没有相加.
+		{	
+			cout << "the last integer " << ivec[ivec.size()-1] << " didn't add." << endl;
+		}
+		else
+		{
+			cout << ivec[index]+ivec[index+1]<< endl;	//相邻两个相加
+		}
+
+	}
+	
+	system("pause");
+	return 0;
+}
+
+头尾元素配对
+
+#include "stdafx.h"		//该头文件为Visual Studio2010编译器的.
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	vector<int> ivec;
+	int n;
+	cout << "input a group of integer: (any letters for end)" << endl;
+	while(cin >> n)
+	{
+		ivec.push_back(n);
+	}
+
+	if ((ivec.size() % 2 != 0))	//输入数为奇数
+	{
+		for (vector<int>::size_type index = 0; index != (ivec.size()-1)/2; ++index)	//当index为中间数时循环测试失败
+		{
+			cout << ivec[index] + ivec[ivec.size()-index-1]<< endl;	//头尾两个相加
+		}
+		cout << "the middle integer " << ivec[(ivec.size()-1)/2] << " has no element to be add." << endl;
+	}
+	else	//输入个数为偶数
+	{
+		for (vector<int>::size_type index = 0; index != ivec.size()/2; ++index)	//当index为中间数时循环测试失败
+		{
+			cout << ivec[index] + ivec[ivec.size()-index-1]<< endl;	//头尾两个相加
+		}
+		
+	}
+	
+	system("pause");	//暂停屏幕,方便查看结果.
+	return 0;
+}
