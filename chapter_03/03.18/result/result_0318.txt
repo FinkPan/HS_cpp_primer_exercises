@@ -1,0 +1,7 @@
+//编写程序来创建有10个元素的vector对象。用迭代器把每个元素值改为当前值的2倍。
+
+	vector<int> ivec(10,54);
+	for (vector<int>::iterator iter = ivec.begin(); iter != ivec.end(); ++iter)
+	{
+		*iter *= 2;
+	}
