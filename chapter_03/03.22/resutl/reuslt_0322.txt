@@ -1,0 +1,17 @@
+What happens if we compute mid as follows:
+vector<int>::iterator mid = (vi.begin() + vi.end()) / 2;
+
+答:
+visual studio 2010 编译不通过哦.
+ error C2678: 二进制“+”: 没有找到接受“std::_Vector_iterator<_Myvec>”类型的左操作数的运算符(或没有可接受的转换)
+
+查看vector头文件:
+	_Myiter operator+(difference_type _Off) const
+		{	// return this + integer
+		_Myiter _Tmp = *this;
+		return (_Tmp += _Off);
+		}
+
+是否说明iterator + 运算只能加个整数?
+
+网上查找相关资料说:两个迭代器相加的操作是未定义的。
