@@ -1,0 +1,32 @@
+下列程序段实现什么功能？ 
+          int i = 42, j = 1024; 
+          int *p1 = &i, *p2 = &j; 
+          *p2 = *p1 * *p2; 
+          *p1 *= *p1; 
+答:
+1. j = i*j = 43008;
+2. i = i*i = 1764;
+
+程序验证:
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	 int i = 42, j = 1024; 
+	 int *p1 = &i, *p2 = &j; 
+	 *p2 = *p1 * *p2; 
+	 *p1 *= *p1; 
+	 
+	 cout << "j: " << j << endl;
+	 cout << "i: " << i << endl;
+
+
+	system("pause");
+	return 0;
+}
+
+j: 43008
+i: 1764
+请按任意键继续. . .
