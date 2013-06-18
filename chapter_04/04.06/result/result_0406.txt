@@ -1,0 +1,10 @@
+下面的程序段企图将下标值赋给数组的每个元素，其中在
+下标操作上有一些错误，请指出这些错误。 
+          const size_t array_size = 10; 
+          int ia[array_size]; 
+          for (size_t ix = 1; ix <= array_size; ++ix) 
+                ia[ix] = ix; 
+ 
+ 答:
+ 1.由于ix初始值为1,而数组ia第一个元素下标为0,故数组ia第一个元素没有赋值到.
+ 2.当ix = 10 时,而数组ia最大下标为9,故数组ia越界了.
