@@ -1,0 +1,28 @@
+//编写代码修改指针的值；然后再编写代码修改指针所指对
+//象的值。
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	int i = 10;
+	int* p = 0;
+	cout << "the origin of i's value: " << i << endl;
+	cout << "the origin of p's address: " << p << endl;
+
+	p = &i;		//修改指针的值
+	*p = 5;		//修改指针所指对象的值。
+	cout << "after change, i's value: " << i << endl;
+	cout << "after change, p's address: " << p << endl;
+
+	system("pause");
+	return 0;
+} 
+
+the origin of i's value: 10
+the origin of p's address: 00000000
+after change, i's value: 5
+after change, p's address: 0036FEAC
+请按任意键继续. . .
