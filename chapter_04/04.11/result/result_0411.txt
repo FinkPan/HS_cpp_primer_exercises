@@ -1,0 +1,18 @@
+解释下列声明语句，并指出哪些是非法的，为什么？ 
+          (a) int* ip; 
+          (b) string s, *sp = 0; 
+          (c) int i; double* dp = &i; 
+          (d) int* ip, ip2; 
+          (e) const int i = 0, *p = i; 
+          (f) string *p = NULL; 
+
+答:
+(a) 合法
+(b) 合法,*sp initialized to address no object
+(c) 非法,double类型指针的只能指向double类型,不能指向int类型.
+(d) 合法,但是ip2 是int类型,不是int指针类型
+(e) 合法,i is a const with compile-time value of 0 
+(f) 合法
+
+程序验证:
+(c)error C2440:  “初始化”: 无法从“int *”转换为“double *”
