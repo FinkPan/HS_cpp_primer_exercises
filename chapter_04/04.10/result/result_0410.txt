@@ -1,0 +1,8 @@
+下面提供了两种指针声明的形式，解释宁愿使用第一种形
+式的原因： 
+          int *ip; // good practice 
+          int* ip; // legal but misleading 
+		  
+答:
+1.容易让人理解int* 为一种数据类型.
+2. string* ps1, ps2; // ps1 is a pointer to string,  ps2 is a string 
