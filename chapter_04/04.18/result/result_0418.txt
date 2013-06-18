@@ -5,10 +5,13 @@ using namespace std;
 
 int main()
 {
+const size_t arr_sz = 7;
 	int a[] = {1,2,3,4,5,6,7};
-	int *p1 = a;
-	for (int i =0; i != 6; ++i)
-		p1[i] = 0;		// 原来指针也可以用下标访问!
+	
+	//看完C+++Primer+第四版中文版.pdf  P176,修改为:
+	for (int *pbegin = a, *pend = a + arr_sz; 
+			pbegin != pend; ++pbegin)
+		*pbegin = 0;
 	for (int i =0; i != 6; ++i)
 		cout << "a[" << i << "]; " << a[i] << endl;
 	system("pause");
