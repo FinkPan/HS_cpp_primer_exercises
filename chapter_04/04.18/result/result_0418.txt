@@ -7,8 +7,8 @@ int main()
 {
 	int a[] = {1,2,3,4,5,6,7};
 	int *p1 = a;
-	for (int i =0; i != 6; ++i,++p1)
-		*p1 = 0;
+	for (int i =0; i != 6; ++i)
+		p1[i] = 0;		// 原来指针也可以用下标访问!
 	for (int i =0; i != 6; ++i)
 		cout << "a[" << i << "]; " << a[i] << endl;
 	system("pause");
@@ -22,3 +22,10 @@ a[3]; 0
 a[4]; 0
 a[5]; 0
 请按任意键继续. . .
+
+
+C+++Primer+第四版中文版.pdf  P174~P175
+在使用下标访问数组时，实际上是对指向数组元素的指针做下标操作。只要指针指向数组元素，就可以对它进行下标操作： 
+	int *p = &ia[2];     // ok: p points to the element indexed by 2 
+	int j = p[1];        // ok: p[1] equivalent to *(p + 1), p[1] is the same element as ia[3] 
+	int k = p[-2];       // ok: p[-2] is the same element as ia[0]
