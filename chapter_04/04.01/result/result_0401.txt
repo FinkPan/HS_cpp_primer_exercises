@@ -1,0 +1,19 @@
+假设 get_size 是一个没有参数并返回 int 值的函数，
+下列哪些定义是非法的？为什么？ 
+          unsigned buf_size = 1024; 
+ 
+          (a) int ia[buf_size]; 
+          (b) int ia[get_size()]; 
+          (c) int ia[4 * 7 - 14]; 
+          (d) char st[11] = "fundamental"; 
+
+答:
+(a)	正确
+(b)	非法,数组定义时维数必须给定.get_size()在编译阶段并不知道返回值
+(c)	正确
+(d)	正确
+
+程序验证:
+(a)是非法的,buf_size 不是const常量,无法用来定义数组!
+(d)是非法的,原因是st溢出.也就是说,容量为11的char放不下
+	11个字符串,因为C-style风格字符串结尾有一个'\0'字符!所以就越界了.
