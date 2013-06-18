@@ -1,0 +1,8 @@
+假设 get_size 是一个没有参数并返回 int 值的函数，
+下列哪些定义是非法的？为什么？ 
+          unsigned buf_size = 1024; 
+ 
+          (a) int ia[buf_size]; 
+          (b) int ia[get_size()]; 
+          (c) int ia[4 * 7 - 14]; 
+          (d) char st[11] = "fundamental"; 

@@ -1,0 +1,7 @@
+解释下列声明语句，并指出哪些是非法的，为什么？ 
+          (a) int* ip; 
+          (b) string s, *sp = 0; 
+          (c) int i; double* dp = &i; 
+          (d) int* ip, ip2; 
+          (e) const int i = 0, *p = i; 
+          (f) string *p = NULL; 

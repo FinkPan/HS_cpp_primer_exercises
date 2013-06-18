@@ -1,0 +1,7 @@
+解释下列 5 个定义的含义，指出其中哪些定义是非法的： 
+          (a) int i; 
+          (b) const int ic; 
+          (c) const int *pic; 
+          (d) int *const cpi; 
+          (e) const int *const cpic; 
+ 

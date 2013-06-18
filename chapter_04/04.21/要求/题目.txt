@@ -1,0 +1,7 @@
+根据上述定义，下列哪些赋值运算是合法的？为什么？
+          (a) i = ic; 
+          (b) pic = &ic; 
+          (c) cpi = pic; 
+          (d) pic = cpic; 
+          (e) cpic = &ic; 
+          (f) ic = *cpic; 

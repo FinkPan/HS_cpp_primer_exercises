@@ -1,0 +1,4 @@
+下面提供了两种指针声明的形式，解释宁愿使用第一种形
+式的原因： 
+          int *ip; // good practice 
+          int* ip; // legal but misleading 

@@ -1,0 +1,7 @@
+下列哪些初始化是合法的？为什么？ 
+          (a) int i = -1; 
+          (b) const int ic = i; 
+          (c) const int *pic = &ic; 
+          (d) int *const cpi = &ic; 
+          (e) const int *const cpic = &ic; 
+ 

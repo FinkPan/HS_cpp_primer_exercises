@@ -1,0 +1,6 @@
+ 下列哪些定义是错误的？ 
+          (a) int ia[7] =  { 0, 1, 1, 2, 3, 5, 8 }; 
+          (b) vector<int> ivec = { 0, 1, 1, 2, 3, 5, 8 }; 
+          (c) int ia2[ ] = ia1; 
+          (d) int ia3[ ] = ivec; 
+ 

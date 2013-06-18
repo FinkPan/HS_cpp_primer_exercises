@@ -1,0 +1,8 @@
+下列数组的值是什么？ 
+          string sa[10]; 
+          int ia[10]; 
+          int main() { 
+              string sa2[10]; 
+              int    ia2[10]; 
+          } 
+ 

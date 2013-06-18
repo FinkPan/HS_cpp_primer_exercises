@@ -1,0 +1,7 @@
+下列程序实现什么功能？ 
+          const char ca[] = {'h', 'e', 'l', 'l','o'}; 
+          const char *cp = ca; 
+          while (*cp) { 
+              cout << *cp << endl; 
+              ++cp; 
+          } 

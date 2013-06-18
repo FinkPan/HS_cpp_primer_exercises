@@ -1,0 +1,1 @@
+编写程序把 int 型 vector 复制给 int 型数组。

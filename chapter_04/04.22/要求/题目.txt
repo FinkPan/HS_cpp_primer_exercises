@@ -1,0 +1,6 @@
+解释下列两个 while 循环的差别： 
+          const char *cp = "hello"; 
+          int cnt; 
+          while (cp) { ++cnt; ++cp; } 
+          while (*cp) { ++cnt; ++cp; } 
+ 
