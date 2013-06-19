@@ -1,0 +1,41 @@
+编写程序从标准输入设备读入字符串，并把该串存放在字
+符数组中。描述你的程序如何处理可变长的输入。提供比
+你分配的数组长度长的字符串数据测试你的程序。 
+
+答:
+
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+	string str1;
+	cout << "please input a string: " << endl;
+	getline(cin,str1);
+	cout << "your string: " << str1 << "and it's length: " << str1.size() <<  endl;
+	char *const pc = new char[str1.size()+1];	//const 修饰数组指针,防止内存泄漏.大小为string大小+1,保证能放c-style风格的结束符null
+	strncpy(pc,str1.c_str(),str1.size()+1);   // n = str1.size()+1; 保证能放c-style风格的结束符null
+	cout << "pc: " << pc << " and it's length: " << strlen(pc)+1 <<  endl;
+
+	//提供比你分配的数组长度长的字符串数据测试你的程序。 
+	cout << "please input a longer string than str1's." << endl;
+	getline(cin,str1);
+	strncpy(pc,str1.c_str(),str1.size());
+	cout << "pc: " << pc << " and it's length: " << strlen(pc) <<  endl;
+
+	delete [] pc;
+	system("pause");
+	return 0;
+}
+
+学习总结:
+1.第一次认识到内存泄漏问题! 其原因: 用new创建一个动态数组,将返回的指针赋值
+	给pc,当执行 pc = str1.c_str(); 时,pc指针发生改变,即动态数组没有了指针指向,
+	这就造成了内存泄漏,再用delete [] pc; 想释放动态数组内存时便出错了.
+2.体会到const 的好处: 将new创建动态数组返回的指针 定义为 *const pc,可以避免
+	pc指针被修改.保证pc指针一直指向new创建的动态数组,最后用delete [] pc;释放
+	内存也不会出错.
+3. c-style风格的字符串结束符null需要注意!
