@@ -1,0 +1,41 @@
+编写程序比较两个 string 类型的字符串，然后编写另一
+个程序比较两个 C 风格字符串的值。 
+
+答:
+//比较两个 string 类型的字符串
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string str1 = "hello world.";
+	string str2 = "hello worlds.";
+	if (str1.compare(str2) == 0)
+		cout << "the two string  are the same." << endl;
+	else
+		cout << "the two string  are the difference." << endl;
+	system("pause");
+	return 0;
+}
+
+the two string  are the difference.
+请按任意键继续. . .
+
+//比较两个 C 风格字符串的值
+#include <iostream>
+#include <cstring> 
+using namespace std;
+int main()
+{
+	char *cp1 = "hello world.";
+	char *cp2 = "hello world.";	
+	if (strcmp(cp1, cp2) == 0)
+		cout << "the two char  are the same." << endl;
+	else
+		cout << "the two char  are the difference." << endl;
+	system("pause");
+	return 0;
+}
+
+the two char  are the same.
+请按任意键继续. . .
