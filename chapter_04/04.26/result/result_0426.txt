@@ -1,0 +1,22 @@
+编写程序从标准输入设备读入一个 string 类型的字符
+串。考虑如何编程实现从标准输入设备读入一个 C 风格
+字符串。 
+
+#include <iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string str;
+	cout << "please input a string: " << endl;
+	getline(cin,str);
+	cout << "str: " << str << endl;
+	char *cp = new char [255];
+	cout << "please input a string: " << endl;
+	cin.get(cp,255);
+	cout << "cp: " << cp << endl;
+	system("pause");
+	return 0;
+}
