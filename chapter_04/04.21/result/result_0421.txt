@@ -1,0 +1,36 @@
+根据上述定义，下列哪些赋值运算是合法的？为什么？
+          (a) i = ic; 
+          (b) pic = &ic; 
+          (c) cpi = pic; 
+          (d) pic = cpic; 
+          (e) cpic = &ic; 
+          (f) ic = *cpic; 
+答:
+(a) 合法,i为变量.可以赋值;
+(b) 合法,pic指针为指向const对象的指针,本身可以改变,
+		 const对象可以赋值给指向const对象的指针
+(c) 非法,cpi指针为const指针,本身可以不改变,即不能将一个可以改变的指针赋值给它
+(d) 合法,因为cpic本身const,其对象也是const.而将const指针赋值给非const是可以的,
+		 反之则不行.
+(e) 非法,ic对象是const,但其地址不是const,因此不能赋值给cpic.
+(f) 合法,因为cpic本身const,其对象也是const.
+
+程序验证:
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int i = -1; 
+	const int ic = i; 
+	i = ic;	//(a)
+	const int *pic = &ic;  //(b)
+	int *const cpi = pic;  //(c)  //“初始化”: 无法从“const int *”转换为“int *const ”
+	const int *const cpic = &ic; //(e)
+	pic = cpic;	//(d)
+	const int ib = *cpic; //(f)
+	system("pause");
+	return 0;
+}
+
+只有(c)是非法的. (e)是合法的.对(e)可以理解ic地址为const?
