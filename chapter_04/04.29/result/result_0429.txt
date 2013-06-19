@@ -1,0 +1,75 @@
+对本小节第 5 条框中的两段程序： 
+	a.  解释这两个程序实现什么功能？ 
+	b.  平均来说，使用 string 类型的程序执行速度要比
+	    用 C 风格字符串的快很多，在我们用了五年的 PC 
+	    机上其平均执行速度分别是： 
+          	user       0.47    # string class 
+          	user       2.55    # C-style 
+	    character string 
+ 
+	你预计的也一样吗？请说明原因。 
+
+答:不知道是不是下面的这个程序? 如果是那就是string比c-style时间还多哦.
+	可能是这样写程序不行吧?
+	
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include <string>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+	time_t timestart,timeend;
+	time(&timestart);
+	//C-style character string implementation 
+	const char *pc = "a very long literal string"; 
+	const size_t len = strlen(pc) +1;      // space to allocate 
+	// performance test on string allocation and copy 
+	for (size_t ix = 0; ix != 1000000; ++ix) 
+	{ 
+		char *pc2 = new char[len + 1]; // allocate the space 
+		strcpy(pc2, pc);               // do the copy 
+		if (strcmp(pc2, pc))           // use the new string 
+			;   // do nothing 
+		delete [] pc2;                 // free the memory 
+	} 
+	time(&timeend);
+	cout << "# c-style class user " << timeend - timestart << endl;
+	
+	time(&timestart);
+	 // string implementation 
+	string str("a very long literal string"); 
+	// performance test on string allocation and copy 
+	for (int ix = 0; ix != 1000000; ++ix)
+	{ 
+		string str2 = str; // do the copy, automatically allocated 
+		if (str != str2)           // use the new string 
+				;  // do nothing 
+	}
+	time(&timeend);
+	cout << "# string class user " << timeend - timestart << endl;
+
+
+	system("pause");
+	return 0;
+}
+
+# c-style class user 2
+# string class user 4
+请按任意键继续. . .
+
+# c-style class user 2
+# string class user 4
+请按任意键继续. . .
+
+# c-style class user 1
+# string class user 4
+请按任意键继续. . .
+
+# c-style class user 1
+# string class user 3
+请按任意键继续. . .
+
+
