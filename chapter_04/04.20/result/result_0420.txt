@@ -1,0 +1,24 @@
+下列哪些初始化是合法的？为什么？ 
+          (a) int i = -1; 
+          (b) const int ic = i; 
+          (c) const int *pic = &ic; 
+          (d) int *const cpi = &ic; 
+          (e) const int *const cpic = &ic; 
+ 答:
+ (a) 正确
+ (b) 正确
+ (c) 正确,	pic为指向const 对象的指针,pic本身不是const.
+ (d) 非法,	cpi为const指针,cpi本身不可以改变,但其指向的对象是可以改变的,
+			而ic是const对象,故不可用赋值给cpi.可以改为int *const cpi = &i;
+ (e) 正确
+ 
+ 程序验证:
+ (a) int i = -1; 					
+ (b) const int ic = i; 
+ (c) const int *pic = &ic; 
+ (d) int *const cpi = &ic; 		// error C2440: “初始化”: 无法从“const int *”转换为“int *const ”
+ (e) const int *const cpic = &ic; 
+ 
+ 其他都可以编译通过.
+ 
+ int *const cpi = &i; 也是可以编译通过.
