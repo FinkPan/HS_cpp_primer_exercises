@@ -1,0 +1,55 @@
+解释下列 5 个定义的含义，指出其中哪些定义是非法的： 
+          (a) int i; 
+          (b) const int ic; 
+          (c) const int *pic; 
+          (d) int *const cpi; 
+          (e) const int *const cpic; 
+ 答:
+ (a) 正确
+ (b) 非法,const 修饰的常量必须初始化
+ (c) 非法,const 修饰的指针常量必须初始化
+ (d) 正确,
+ (e) 非法,const修饰const指针必须初始化
+ 
+ 程序验证
+ (a) 正确
+ (b) error C2734: “ic”: 如果不是外部的，则必须初始化常量对象
+ (c) 正确
+ (d) error C2734: “cpi”: 如果不是外部的，则必须初始化常量对象
+ (e) error C2734: “cpic”: 如果不是外部的，则必须初始化常量对象
+ 
+ (c)和(d)做错了!
+ 
+ (c) P117~P118:
+		到目前为止，我们使用指针来修改其所指对象的值。但是如果指针指向 
+		const 对象，则不允许用指针来改变其所指的 const 值。为了保证这个特性，
+		C++ 语言强制要求指向 const 对象的指针也必须具有 const 特性： 
+			const double *cptr;  // cptr may point to a double th at is const 
+		这里的 cptr 是一个指向 double 类型 const 对象的指针，const 限定了 
+		cptr 指针所指向的对象类型，而并非 cptr 本身。也就是说，cptr 本身并不是 
+		const。在定义时不需要对它进行初始化，如果需要的话，允许给 cptr 重新赋
+		值，使其指向另一个 const 对象。但不能通过 cptr 修改其所指对象的值： 
+			*cptr = 42;   // error: *cptr might be const 
+
+//通过例子更加直观理解(c): const是修饰 *pic,即修饰pic指向的对象.pic本身是可以改变的.
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i = 10; 
+	int j = 3;
+	const int *pic;  
+	pic = &i;
+	//*pic = 5;		//error C3892: “pic”: 不能给常量赋值
+	cout << "point to i: " << *pic << endl;
+	pic = &j;
+	cout << "point to j: " << *pic << endl;
+	system("pause");
+	return 0;
+}
+point to i: 10
+point to j: 3
+请按任意键继续. . .
+//理解了(c),对(d)也理解了. 因为const是修饰 cpi,即cpi指针本身,如果不初始化,
+	cpi将无法指向任何地址.即是没有意义的.
+
