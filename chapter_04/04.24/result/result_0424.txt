@@ -1,0 +1,8 @@
+解释 strcpy 和 strncpy 的差别在哪里，各自的优缺点是什么？ 
+
+答:
+	1.strcpy(s1, s2)  将 s2 复制给 s1，并返回 s1
+	2.strncpy(s1, s2, n) 将 s2 的前 n 个字符复制给 s1，并返回 s1 
+	
+1.strcpy(s1, s2)   中s1必须要足够大的空间放s2;
+2.strncpy(s1, s2, n) 中s1有n保证其空间足够放n个字符.
