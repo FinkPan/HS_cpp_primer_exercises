@@ -1,0 +1,11 @@
+编写程序用 int 型数组初始化 vector 对象。 
+
+#include <vector>
+using namespace std;
+int main()
+{
+	const size_t arr_size = 5;
+	int na[arr_size] = {1,3,5,7,9};
+	vector<int> va(na,na+arr_size);
+	return 0;
+}
