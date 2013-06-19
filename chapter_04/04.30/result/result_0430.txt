@@ -1,0 +1,31 @@
+编写程序连接两个 C 风格字符串字面值，把结果存储在一
+个 C 风格字符串中。然后再编写程序连接两个 string 类
+型字符串，这两个 string 类型字符串与前面的 C 风格字
+符串字面值具有相同的内容。 
+
+答:
+#include <iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+
+int main()
+{
+	char *pca = "hello";
+	char *pcb = "world";
+	char *pcc;
+	size_t na = strlen(pca)+1;
+	size_t nb = strlen(pcb)+1;
+	size_t cc = na + nb;
+	pcc = new char[cc];
+	strncpy(pcc,pca,na);
+	strncat(pcc,pcb,nb);
+	cout << "# c-style: " << pcc << endl;
+
+	string str1 = "hello";
+	string str2 = "world";
+	string str3 = str1 + str2;
+	cout << "# string: " << str3 << endl;
+	system("pause");
+	return 0;
+}
