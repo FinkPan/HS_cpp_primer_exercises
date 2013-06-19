@@ -1,0 +1,10 @@
+解释下列两个 while 循环的差别： 
+          const char *cp = "hello"; 
+          int cnt; 
+          while (cp) { ++cnt; ++cp; } 
+          while (*cp) { ++cnt; ++cp; } 
+		  
+答:
+第一个while:是判断指针,但是没有怎么判断循环结束的条件,当cp到达字符串末尾时,仍然继续读取..
+第二个while:是判断字符,当*cp到达字符串末端时为null.跳出while循环.
+ 
