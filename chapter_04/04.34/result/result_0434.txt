@@ -1,0 +1,50 @@
+编写程序读入一组 string 类型的数据，并将它们存储在 
+vector 中。接着，把该 vector 对象复制给一个字符指
+针数组。为 vector 中的每个元素创建一个新的字符数
+组，并把该 vector 元素的数据复制到相应的字符数组
+中，最后把指向该数组的指针插入字符指针数组。 
+
+答:
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	string str1;
+	vector<string> vstr;
+	cout << "intput same wolds: " << endl;
+	while(cin >> str1)
+		vstr.push_back(str1);
+	const size_t arr_size = vstr.size();
+	char **const pc = new char* [arr_size];	//指向数组指针的指针 
+	for (int i = 0; i != arr_size; ++i)
+	{
+		const size_t sub_arr_size = vstr[i].size()+1;	//c-style风格记得加一个null符号.
+		char *const pcsub = new char[sub_arr_size];
+		strncpy(pcsub,vstr[i].c_str(),sub_arr_size);
+		pc[i] = pcsub;
+	}
+
+	//输出习题4.34
+	for (int i = 0; i !=arr_size; ++i)	//输出vector
+		cout << "vector[" << i << "] " << vstr[i] << "\n";
+
+	for (int i = 0; i !=arr_size; ++i)	//输出数组内容,有arr_size个元素
+	{
+		const size_t sub_char_arry_size = strlen(pc[i])+1;
+		for (int j = 0; j != sub_char_arry_size; ++j)	//遍历每个字符数组中的每一个元素
+			cout << pc[i][j];
+	}
+
+	//释放内存
+	for (int i = 0; i !=arr_size; ++i)	
+		delete [] pc[i];	//释放每一个数组
+
+	delete [] pc;	//最后释放指向数组的数组.
+
+	system("pause");
+	return 0;
+}
