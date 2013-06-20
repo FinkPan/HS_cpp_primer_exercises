@@ -1,0 +1,9 @@
+给定下列定义： 
+     int ival;                         double 
+dval; 
+     const string *ps;    char *pc;    void *pv; 
+ 
+用命名的强制类型转换符号重写下列语句： 
+     (a) pv = (void*)ps;     (b) ival = int(*pc); 
+     (c) pv = &dval;         (d) pc = (char*) pv; 
+ 

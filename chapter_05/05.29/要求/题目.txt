@@ -1,0 +1,9 @@
+假设 ptr 指向类类型对象，该类拥有一个名为 ival 的 
+int 型数据成员， vec 是保存 int 型元素的 vector 对
+象，而 ival、 jval 和 kval 都是 int 型变量。请解释
+下列表达式的行为，并指出哪些（如果有的话）可能是不
+正确的，为什么？如何改正？ 
+     (a) ptr->ival != 0            (b) ival != jval 
+< kval 
+     (c) ptr != 0 && *ptr++        (d) ival++ && ival 
+     (e) vec[ival++] <= vec[ival] 

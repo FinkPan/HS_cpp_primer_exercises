@@ -1,0 +1,6 @@
+预测下列程序的输出是，并解释你的理由。然后运行该程
+序，输出的结果和你的预测的一样吗？如果不一样，为什
+么？ 
+     int x[10];   int *p = x; 
+     cout << sizeof(x)/sizeof(*x) << endl; 
+     cout << sizeof(p)/sizeof(*p) << endl; 

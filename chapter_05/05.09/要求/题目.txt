@@ -1,0 +1,5 @@
+假设有下面两个定义 
+     unsigned long ul1 = 3, ul2 = 7; 
+下列表达式的结果是什么？ 
+     (a) ul1 & ul2     (c)  ul1 | ul2 
+     (b) ul1 && ul2    (d)  ul1 || ul2 
