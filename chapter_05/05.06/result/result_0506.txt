@@ -1,0 +1,7 @@
+解释下列 while 循环条件的行为： 
+     char *cp = "Hello World"; 
+     while (cp && *cp) 
+	 
+cp 为指针,其值不为0
+*cp为字符H,其值不为0
+所以while 循环条件的行为true, 即为死循环.
