@@ -1,0 +1,13 @@
+ 编写一个表达式判断一个 int 型数值是偶数还是奇数。
+ 
+ int main()
+{
+	int a;
+	cout << "please intput a integer,I will tell you that is a even number or not: \n";
+	while(cin >> a)
+		if (a % 2 == 0)
+			cout << a << " is even number.\n";
+		else
+			cout << a << " is odd number.\n";
+	return 0;
+}
