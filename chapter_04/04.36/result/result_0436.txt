@@ -1,0 +1,27 @@
+重写程序输出 ia 数组的内容，要求在外层循环中不能使
+用 typedef 定义的类型。
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	const size_t rowSize = 3; 
+	const size_t colSize = 4; 
+	int ia [rowSize][colSize];   // 12 uninitialized elements 
+	// for each row 
+	for (size_t i = 0; i != rowSize; ++i) 
+		// for each column within the row 
+		for (size_t j = 0; j != colSize; ++j) 
+			// initialize to its positional index 
+			ia[i][j] = i * colSize + j; 
+
+	int (*int_row)[colSize] = ia;
+	int *int_col;
+	for (int_row; int_row != ia + rowSize; ++int_row) //遍历行
+		for (int_col = *int_row; int_col != *int_row + colSize; ++int_col)  //遍历列
+			cout << *int_col << endl; 
+
+	system("pause");
+	return 0;
+}
