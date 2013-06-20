@@ -1,0 +1,18 @@
+编写 while 循环条件从标准输入设备读入整型(int)数
+据，当读入值为 42 时循环结束。 
+
+答:
+int main()
+{
+	int n;
+	cout << "please input a integer, '42' or letters for ending.\n";
+	while (cin >> n) 
+	{
+		if(n == 42)
+			break;
+		cout << n << "\n";
+	}
+
+	system("pause");
+	return 0;
+}
