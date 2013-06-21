@@ -1,0 +1,31 @@
+假设有下面两个定义 
+     unsigned long ul1 = 3, ul2 = 7; 
+下列表达式的结果是什么？ 
+     (a) ul1 & ul2     (c)  ul1 | ul2 
+     (b) ul1 && ul2    (d)  ul1 || ul2 
+	 
+答:
+3 = 00000011	7 =00000111
+(a) ul1 & ul2 = 00000011 = 3
+(c) ul1 | ul2 = 00000111 = 7
+(b) ul1 && ul2 = true
+(d)  ul1 || ul2  = true
+
+程序验证:
+#include <iostream>
+using namespace std;
+int main()
+{
+	unsigned long u11 = 3;
+	unsigned long u12 = 7;
+	cout << "(a) ul1 & ul2 = "  << (u11 & u12) << "\n";
+	cout << "(a) ul1 | ul2 = "  << (u11 | u12) << "\n";
+	cout << "(a) ul1 && ul2 = "  << boolalpha << (u11 && u12) << "\n";
+	cout << "(a) ul1 || ul2 = "  << boolalpha << (u11 || u12) << "\n";
+	return 0;
+}
+
+(a) ul1 & ul2 = 3
+(a) ul1 | ul2 = 7
+(a) ul1 && ul2 = true
+(a) ul1 || ul2 = true
