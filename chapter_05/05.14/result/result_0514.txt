@@ -1,0 +1,10 @@
+虽然下列表达式都是合法的，但并不是程序员期望的操
+作，为什么？怎样修改这些表达式以使其能反映程序员的
+意图？ 
+     (a) if (ptr = retrieve_pointer() != 0) 
+     (b) if (ival = 1024) 
+     (c) ival += ival + 1; 
+答:
+(a) if ((ptr = retrieve_pointer()) != 0) 	// 逻辑运算符优先级高于赋值符号
+(b) if (ival == 1024)  
+(c) ival += 1; 或 ival = ival + 1; ?  或 ++ ival; ?
