@@ -1,0 +1,22 @@
+本节的程序与第 5.5 节在 vector 对象中添加元素的程
+序类似。两段程序都使用递减的计数器生成元素的值。本
+程序中，我们使用了前自减操作，而第 5.5 节的程序则
+使用了后自减操作。解释为什么一段程序中使用前自减操
+作而在另一段程序中使用后自减操作。 
+
+5.5程序
+  vector<int> ivec;           // empty vector 
+  int cnt = 10; 
+  // add elements 10...1 to ivec 
+  while (cnt > 0) 
+      ivec.push_back(cnt--);  // int postfix decrement 
+	  
+5.9程序
+  int cnt = ivec.size(); 
+  // add elements from size... 1 to ivec 
+  for(vector<int>::size_type ix = 0; 
+                  ix != ivec.size(); ++ix, --cnt) 
+      ivec[ix] = cnt; 
+	  
+答:
+原因很简单,ivec下标是从0开始的.而size()函数大小是从1开始算起.故根据具体问题选择前自减还是后自减
