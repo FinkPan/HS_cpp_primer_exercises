@@ -1,0 +1,26 @@
+请问每次赋值操作完成后，i 和 d 的值分别是多少？
+    int i;   double d; 
+    d = i = 3.5; 
+    i = d = 3.5; 
+	
+答:
+
+d = i = 3.5  ->  d = (i = 3.5) -> d = 3 即 i = 3; d = 3
+i = d = 3.5  ->  i = (d = 3.5) -> i = 3 即 i = 3; d = 3.5
+
+程序验证:
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i;   double d; 
+	d = i = 3.5; 
+	cout << "i = " << i << ";  d = " << d << "\n";
+	i = d = 3.5; 
+	cout << "i = " << i << ";  d = " << d << "\n";
+	return 0;
+}
+
+i = 3;  d = 3
+i = 3;  d = 3.5
+请按任意键继续. . .
