@@ -1,0 +1,8 @@
+由于操作符优先级的问题，下列表达式编译失败。请参照
+表 5.4 解释原因，应该如何改正？ 
+     string s = "word"; 
+     // add an 's' to the end, if the word doesn't already end in 's' 
+     string pl = s + s[s.size() -  1] == 's' ? "" : "s" ; 
+
+答:
+string pl = s + (s[s.size() -  1] == 's' ? "" : "s" ); 
