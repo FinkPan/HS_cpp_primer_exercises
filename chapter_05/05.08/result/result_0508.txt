@@ -1,0 +1,17 @@
+编写表达式判断四个值 a、b、c 和 d 是否满足 a 大于 
+b、b 大于 c 而且 c 大于 d 的条件。 
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,d;
+	cout << "please input 4 integers, letters for ending.\n";
+	cin >> a >> b >> c >> d;
+		cout << a << " " << b << " " << c << " " << d << "\n";
+	if(a>b && b>c && c>d)
+		cout << "is: a>b>c>d";
+	else
+		cout << "not: a>b>c>d\n";
+	return 0;
+}
