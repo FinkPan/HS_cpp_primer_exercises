@@ -1,0 +1,26 @@
+下列语句哪些（如果有的话）是非法的或错误的？ 
+     (a) vector<string> svec(10); 
+     (b) vector<string> *pvec1 = new vector<string>(10); 
+     (c) vector<string> **pvec2 = new vector<string>[10]; 
+     (d) vector<string> *pv1 = &svec; 
+     (e) vector<string> *pv2 = pvec1; 
+	 
+     (f) delete svec; 
+     (g) delete pvec1; 
+     (h) delete [] pvec2; 
+     (i) delete pv1; 
+     (j) delete pv2; 
+	 
+答:
+
+(a) 正确
+(b) 正确
+(c) 错误
+(d) 正确
+(e) 正确
+
+(f) 错误 
+(g) 正确
+(h) 错误
+(i) 错误
+(j) 错误
