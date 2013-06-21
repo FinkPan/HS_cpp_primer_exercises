@@ -1,0 +1,19 @@
+//编写程序输出的每种内置类型的长度。
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "int has: " << sizeof(int) << "  byte\n";
+	cout << "float has: " << sizeof(float) << "  byte\n";
+	cout << "double has: " << sizeof(double) << "  byte\n";
+	cout << "unsigned int has: " << sizeof(unsigned int) <<  "  byte\n";
+	cout << "bool has: " << sizeof(bool) <<  "  byte\n";
+	cout << "char has: " << sizeof(char) <<  "  byte\n";
+	return 0;
+}
+int has: 4  byte
+float has: 4  byte
+double has: 8  byte
+unsigned int has: 4  byte
+bool has: 1  byte
+char has: 1  byte
