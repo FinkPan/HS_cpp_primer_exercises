@@ -1,0 +1,14 @@
+Exercise 
+5.31: 
+记住，你可能需要考虑操作符的结合性，以便在表达式含
+有多个操作符的情况下确定答案。 
+     (a) if (fval) 
+     (b) dval = fval + ival; 
+     (c) dval + ival + cval; 
+记住，你可能需要考虑操作符的结合性，以便 在表达式含有多个操作符
+的情况下确定答案。 
+
+答:
+(a)	将fval为bool类型
+(b)	将fval转为int类型然后与ival相加,当赋值给dval时,将右值转为double类型
+(c) 将ival转为double类型,相加,然后将cval转为double再相加.
