@@ -1,0 +1,5 @@
+解释下面的循环： 
+     string s; 
+     while (cin >> s && s != sought) { } // empty body 
+     assert(cin); 
+     // process s 

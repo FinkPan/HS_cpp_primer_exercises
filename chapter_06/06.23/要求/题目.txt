@@ -1,0 +1,3 @@
+bitset 类提供 to_ulong 操作，如果 bitset 提供的位
+数大于 unsigned long 的长度时，抛出一个 
+overflow_error 异常。编写产生这种异常的程序。 

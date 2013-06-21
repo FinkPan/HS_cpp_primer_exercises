@@ -1,0 +1,21 @@
+解释下列的循环。更正你发现的问题。 
+     (a) do 
+              int v1, v2; 
+              cout << "Please enter two numbers to sum:" ; 
+              cin >> v1 >> v2; 
+              if (cin) 
+                  cout << "Sum is: " 
+                       << v1 + v2 << endl; 
+         while (cin); 
+ 
+     (b) do { 
+             // ... 
+         } while (int ival = get_response()); 
+ 
+     (c) do { 
+             int ival = get_response(); 
+             if (ival == some_value()) 
+                  break; 
+         } while (ival); 
+          if (!ival) 
+              // ...

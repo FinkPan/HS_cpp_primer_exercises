@@ -1,0 +1,15 @@
+解释下面每个循环，更正你发现的任何问题。 
+     (a) for (int *ptr = &ia, ix = 0; 
+               ix != size && ptr != ia+size; 
+               ++ix, ++ptr)   { /* ... */ } 
+     (b) for (; ;) { 
+               if (some_condition) return; 
+               // ... 
+         } 
+     (c) for (int ix = 0; ix != sz; ++ix) { /* ...*/ } 
+         if (ix != sz) 
+              // ... 
+     (d) int ix; 
+         for (ix != sz; ++ix) { /* ... */ } 
+     (e) for (int ix = 0; ix != sz; ++ix, ++ sz) { /* ... */ } 
+ 

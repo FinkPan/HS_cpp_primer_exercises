@@ -1,0 +1,15 @@
+解释下面的循环，更正你发现的问题。 
+     (a) string bufString, word; 
+         while (cin >> bufString >> word) { /* ...*/ } 
+ 
+     (b) while (vector<int>::iterator iter != ivec.end()) 
+         {/*... */ } 
+ 
+     (c) while (ptr = 0) 
+             ptr = find_a_value(); 
+ 
+     (d) while (bool status = find(word)) 
+         { word = get_next_word(); } 
+         if (!status) 
+              cout << "Did not find any words\n"; 
+ 
