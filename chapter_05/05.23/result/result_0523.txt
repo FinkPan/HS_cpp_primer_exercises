@@ -1,0 +1,29 @@
+预测下列程序的输出是，并解释你的理由。然后运行该程
+序，输出的结果和你的预测的一样吗？如果不一样，为什
+么？ 
+     int x[10];   int *p = x; 
+     cout << sizeof(x)/sizeof(*x) << endl; 
+     cout << sizeof(p)/sizeof(*p) << endl; 
+	 
+答:
+1.10	
+2.1
+
+因为:
+1.//sizeof(x) 是对数组做 sizeof 操作等效于将对其元素类型做 sizeof 操作的结果乘上数组元素的个数。
+2.//sizeof(p) 是对指针做 sizeof 操作将返回存放指针所需的内在大小
+3.//sizeof(*x) 是对引用类型做 sizeof 操作将返回存放此引用类型对象所需的内在空间大小。
+程序验证:
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x[10]; 
+	int *p = x; 
+	cout << sizeof(x)/sizeof(*x) << endl; 
+	cout << sizeof(p)/sizeof(*p) << endl; 
+	return 0;
+}
+10
+1
+
