@@ -1,0 +1,8 @@
+什么是空语句？请给出一个使用空语句的例子。
+
+答:
+只有一个单独的分号 : 的语句
+如:
+ // read until we hit end-of-file or find an input equal to sought 
+ while (cin >> s && s != sought) 
+     ; // null statement 
