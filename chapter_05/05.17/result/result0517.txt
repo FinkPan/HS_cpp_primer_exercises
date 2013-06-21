@@ -1,0 +1,10 @@
+如果输出 vector 内容的 while 循环使用前自增操作符，
+那会怎么样？ 
+
+   vector<int>::iterator iter = ivec.begin(); 
+   // prints 10 9 8 ... 1 
+   while (iter != ivec.end()) 
+       cout << *iter++ << endl; // iterator postfix increment 
+	   
+如果使用 *++iter 第一个元素无法输出,并因为输出vector末尾元素的最后一个元素二
+而发生越界.
