@@ -1,0 +1,13 @@
+假设 iter 为 vector<string>::iterator 类型的变量，
+指出下面哪些表达式是合法的，并解释这些合法表达式的
+行为。 
+     (a) *iter++;         (b) (*iter)++; 
+     (c) *iter.empty()    (d) iter->empty(); 
+     (e) ++*iter;         (f) iter++->empty(); 
+答:
+(a) 合法 iter自增再取其值
+(b) 不合法
+(c) 不合法
+(d)	合法, 相当于 (*iter).empty();
+(e) 不合法
+(f)	合法  相当于 (*iter).empty(); 然后自增.
