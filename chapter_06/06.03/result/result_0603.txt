@@ -1,0 +1,61 @@
+使用逗号操作符（第 5.9 节）重写书店问题中 while 循
+环里的 else 分支，使它不再需要用块实现。解释一下重
+写后是提高还是降低了该段代码的可读性。 
+//需重写代码如下:
+#include <iostream> 
+#include "Sales_item.h" 
+int main() 
+{ 
+	//  declare variables to hold running sum and data for  the next record 
+	Sales_item total, trans; 
+	//  is there data to process? 
+	if (std::cin >> total) { 
+		// if so, read the transaction records 
+		while (std::cin >> trans) 
+			if  (total.same_isbn(trans)) 
+			   //  match: update the running total 
+			   total = total + trans; 
+			else { 
+			   //  no match: print & assign to total 
+			   std::cout << total << std::endl; 
+			   total = trans; 
+			} 
+		//  remember to print last record 
+		std::cout << total << std::endl; 
+	 } else { 
+		//  no input!, warn the user 
+		std::cout << "No data?!" << std::endl; 
+		return -1;  //  indicate failure 
+	 } 
+	 return 0; 
+}
+
+答:
+#include <iostream> 
+#include "Sales_item.h" 
+int main() 
+{ 
+	//  declare variables to hold running sum and data for  the next record 
+	Sales_item total, trans; 
+	//  is there data to process? 
+	if (std::cin >> total) { 
+		// if so, read the transaction records 
+		while (std::cin >> trans) 
+			if  (total.same_isbn(trans)) 
+			   //  match: update the running total 
+			   total = total + trans; 
+			else
+			   //  no match: print & assign to total 
+			   std::cout << total << std::endl,total = trans; //逗号表达式.
+		//  remember to print last record 
+		std::cout << total << std::endl; 
+	 } else { 
+		//  no input!, warn the user 
+		std::cout << "No data?!" << std::endl; 
+		return -1;  //  indicate failure 
+	 } 
+	 return 0; 
+}
+
+我觉得肯定是降低了这段代码的可读性.
+因为一行表达一个意思,比较直观.
