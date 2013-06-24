@@ -1,0 +1,5 @@
+什么是“悬垂 else”？C++ 是如何匹配 else 子句的？
+
+答:
+当if语句多于else语句且else语句有二义性时的else语句为悬垂else.
+c++选择离if语句最近的else语句匹配.
