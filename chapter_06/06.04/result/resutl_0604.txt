@@ -1,0 +1,29 @@
+在解决书店问题的 while 循环中，如果删去 while 后面
+的左花括号及相应的右花括号，将会给程序带来什么影
+响？ 
+
+答:
+     // if so, read the transaction records 
+     while (std::cin >> trans) 
+         if (total.same_isbn(trans)) 
+             // match: update the running total 
+             total = total + trans; 
+        else { 
+             // no match: print & assign to total 
+             std::cout << total << std::endl; 
+             total = trans; 
+     } 
+
+如果变为这样:
+     // if so, read the transaction records 
+     while (std::cin >> trans) 
+         if (total.same_isbn(trans)) 
+             // match: update the running total 
+             total = total + trans; 
+        else 
+             // no match: print & assign to total 
+             std::cout << total << std::endl; 
+             total = trans; 
+    
+total = trans;  就不属于while语句块的了.
+也就是说当输入和total不一样时,程序只输出total,但不将trans赋值给total
