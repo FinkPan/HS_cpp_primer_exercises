@@ -1,0 +1,60 @@
+修改元音统计程序使其可统计出读入的空格、制表符和换
+行符的个数。 
+
+答:
+int main()
+{
+	char ch; 
+	// initialize counters for each vowel 
+	int aCnt = 0, eCnt = 0, iCnt = 0, 
+		oCnt = 0, uCnt = 0, sCnt = 0,
+		tCnt = 0, bCnt = 0; 
+	while (cin.get(ch)) 	//这里不能用 >> ,因为 >> 是会忽略空格,制表符和换行符.
+	{ 
+		// if ch is a vowel, increment the appropriate counter 
+		switch (ch) 	
+		{ 
+		case ' ': 
+			++sCnt; 
+			break;
+		case '\t': 
+			++tCnt; 
+			break;
+		case '\n': 
+			++bCnt; 
+			break;
+		case 'a': 
+		case 'A':
+			++aCnt; 
+			break;
+		case 'e': 
+		case 'E':
+			++eCnt; 
+			break; 
+		case 'i':
+		case 'I':
+			++iCnt; 
+			break; 
+		case 'o': 
+		case 'O': 
+			++oCnt; 
+			break; 
+		case 'u': 
+		case 'U':
+			++uCnt; 
+			break; 
+		} 
+	} 
+	// print results 
+	cout  << "Number of vowel a: \t" << aCnt << '\n' 
+		<< "Number of vowel e: \t" << eCnt << '\n' 
+		<< "Number of vowel i: \t" << iCnt << '\n' 
+		<< "Number of vowel o: \t" << oCnt << '\n' 
+		<< "Number of vowel o: \t" << uCnt << '\n'
+		<< "Number of vowel o: \t" << sCnt << '\n'
+		<< "Number of vowel o: \t" << tCnt << '\n'
+		<< "Number of vowel u: \t" << bCnt << endl; 
+
+	system("pause");
+	return 0;
+}
