@@ -1,0 +1,43 @@
+修改元音统计程序使其可统计以下双字符序列出现的次
+数：ff、fl 以及 fi。 
+
+答:
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	char ch; 
+	// initialize counters for each vowel 
+	int ffCnt = 0, flCnt = 0, fiCnt = 0;
+	while (cin >> ch) 
+	{ 
+		// if ch is a vowel, increment the appropriate counter 
+		switch (ch) 
+		{ 
+		case 'f': 
+			{
+				cin >> ch;
+				switch(ch)
+				{
+				case 'f':
+					++ffCnt; 
+					break;
+				case 'l':
+					++flCnt;
+					break;
+				case 'i':
+					++fiCnt;
+					break;
+				}
+				cin.unget();	// ffi 如果只算ff不算fi,则注释掉该行.
+			}
+
+		} 
+	} 
+	// print results 
+	cout  << "Number of vowel a: \t" << ffCnt << '\n' 
+		<< "Number of vowel e: \t" << flCnt << '\n' 
+		<< "Number of vowel i: \t" << fiCnt << '\n' ;
+	return 0;
+}
