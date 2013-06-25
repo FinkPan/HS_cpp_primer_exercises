@@ -1,0 +1,44 @@
+编写一个小程序，从标准输入读入一系列 string 对象，
+寻找连续重复出现的单词。程序应该找出满足以下条件的
+单词的输入位置：该单词的后面紧跟着再次出现自己本
+身。跟踪重复次数最多的单词及其重复次数。输出重复次
+数的最大值，若没有单词重复则输出说明信息。例如，如
+果输入是： 
+     how, now now now brown cow cow 
+ 
+则输出应表明“now”这个单词出现了三次。 
+
+答:
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string firstString, nextString,maxString;
+	int maxcnt = 0;
+	int tempmaxcnt = 1;
+	cin >> firstString;
+	while (cin >> nextString)
+	{
+		if (!firstString.compare(nextString))	//判断第二个字符串是否与上一个相同.
+		{
+			tempmaxcnt++;	//如果相同,记录个数.
+		}
+		else	//如果不相同, 将该字符串替换第一个字符串,并重置临时最大值计数器
+		{
+			firstString = nextString;
+			tempmaxcnt = 1;
+
+		}
+		if (tempmaxcnt > maxcnt)	//比较临时最大值计数器和真正最大值计数器,如果
+		{							//临时最大值计数器大于真正最大值计数器说明后面
+			maxcnt = tempmaxcnt;	//有比之前更多次重复的单词.
+			maxString = nextString;
+		}
+	} 
+	if (maxcnt > 1)	//如果真正最大值计数器maxcnt大于1 说明有重复.
+		cout << "the word \"" << maxString << "\" has " << maxcnt << " times.\n";
+	 else
+		 cout << "there have no the same word!\n";
+	return 0;
+}
