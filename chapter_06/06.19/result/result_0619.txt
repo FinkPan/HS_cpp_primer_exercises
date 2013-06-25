@@ -1,0 +1,10 @@
+本节的第一个程序可以写得更简洁。事实上，该程序的所
+有工作可以全部包含在 while 的循环条件中。重写这个
+循环，使得它的循环体为空，并找出满足条件的元素。 
+
+答:
+vector<int>::iterator iter = vec.begin(); 
+ while (iter != vec.end() && (value == *iter++)) 
+ { }// end of while 
+ if (iter != vec.end()) // break to here ... 
+	 // continue processing 
