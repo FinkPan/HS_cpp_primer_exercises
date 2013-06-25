@@ -29,12 +29,12 @@ Code for Exercises in Section 6.6.5
        // ... 
        switch(swt) { 
            case ival: 
-               bufsize = ival * zeof(int); 
+               bufsize = ival * sizeof(int); 
                break; 
            case jval: 
-               bufsize = jval * zeof(int); 
+               bufsize = jval * sizeof(int); 
                break; 
            case kval: 
-               bufsize = kval * zeof(int); 
+               bufsize = kval * sizeof(int); 
                break; 
        } 
