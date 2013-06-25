@@ -1,0 +1,24 @@
+给出两个 int 型的 vector 对象，编写程序判断一个对
+象是否是另一个对象的前缀。如果两个 vector 对象的长
+度不相同，假设较短的 vector 对象长度为 n，则只对这
+两个对象的前面 n 个元素做比较。例如，对于 (0, 1, 1,
+2) 和 (0, 1, 1, 2, 3, 5, 8) 这两个 vector，你的程
+序应该返回 true。 
+
+答:
+
+bool ComparePrefix(const vector<int> &ivec1, const vector<int> &ivec2)
+{
+	size_t size1 = ivec1.size();
+	size_t size2 = ivec2.size();
+	vector<int>::const_iterator iter1 = ivec1.begin();
+	vector<int>::const_iterator iter2 = ivec2.begin();
+	int shortvec = size1 <= size2 ? size1 : size2;
+	int n = 0;	//计数相等个数
+	while((n != shortvec) && (*iter1++ == *iter2++))	//&&逻辑判断,如果n = shortvec 则不再执行后面的判断语句,保证*iter1++ == *iter2++	不会越界.	
+		n++;											
+	if (n == shortvec)	//判断相等个数是否等于最小vecter长度
+		return true;
+	else
+		return false;
+}
