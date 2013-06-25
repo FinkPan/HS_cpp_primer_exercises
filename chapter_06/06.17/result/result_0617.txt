@@ -1,0 +1,50 @@
+解释下列的循环。更正你发现的问题。 
+     (a) do 
+              int v1, v2; 
+              cout << "Please enter two numbers to sum:" ; 
+              cin >> v1 >> v2; 
+              if (cin) 
+                  cout << "Sum is: " 
+                       << v1 + v2 << endl; 
+         while (cin); 
+ 
+     (b) do { 
+             // ... 
+         } while (int ival = get_response()); 
+ 
+     (c) do { 
+             int ival = get_response(); 
+             if (ival == some_value()) 
+                  break; 
+         } while (ival); 
+          if (!ival) 
+              // ...
+			  
+答:
+
+(a) 提示用户输入两个整数,输出其和. 题目少了一对花括号.
+    do{ 
+              int v1, v2; 
+              cout << "Please enter two numbers to sum:" ; 
+              cin >> v1 >> v2; 
+              if (cin) 
+                  cout << "Sum is: " 
+                       << v1 + v2 << endl; 
+         }while (cin); 
+
+(b) 按题意是想说ival变量不能定义在while里,
+    int ival ;
+	do { 
+             // ... 
+         } while (int ival = get_response()); 
+   
+
+(c) 还是变量作用域问题.后面的if语句变量在do语句里面定义,出了语句块就是未定义的了.
+	 int ival;
+	 do { 
+             ival = get_response(); 
+             if (ival == some_value()) 
+                  break; 
+         } while (ival); 
+          if (!ival) 
+              // ...
