@@ -1,0 +1,35 @@
+Exercise 
+7.6:  
+编写函数交换两个 int 型指针所指向的值，调用并检验
+该函数，输出交换后的值。 
+
+答:
+
+#include <iostream>
+using namespace std;
+void swap(int *pia, int *pib)
+{
+	int temp = *pia;
+	*pia = *pib;
+	*pib = temp;
+}
+int main()
+{
+	int ia = 0;
+	int ib = 0;
+	int *pia = &ia;
+	int *pib = &ib;
+	cout << "please input two integers: \n";
+	cin >> ia >> ib;
+	cout << "before swap ia= " << ia << " ib= " << ib << "\n";
+	swap(pia,pib);
+	cout << "after swap ia= " << ia << " ib= " << ib << "\n";
+	return 0;
+}
+
+please input two integers:
+51 886
+before swap ia= 51 ib= 886
+after swap ia= 886 ib= 51
+
+
