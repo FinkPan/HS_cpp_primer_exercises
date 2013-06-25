@@ -1,0 +1,37 @@
+解释下面的循环，更正你发现的问题。 
+     (a) string bufString, word; 
+         while (cin >> bufString >> word) { /* ...*/ } 
+ 
+     (b) while (vector<int>::iterator iter != ivec.end()) 
+         {/*... */ } 
+ 
+     (c) while (ptr = 0) 
+             ptr = find_a_value(); 
+ 
+     (d) while (bool status = find(word)) 
+         { word = get_next_word(); } 
+         if (!status) 
+              cout << "Did not find any words\n"; 
+ 
+答:
+(a) 循环让用户输入两个string,并将其分别赋值给bufString,word;
+    
+
+(b) vector<int>::iterator iter = ivec.begin();
+	while (iter != ivec.end()) 
+         {
+		 /*... */ 
+		 iter++;
+		 } 
+    
+
+(c) while (ptr == 0) 	//注意赋值符号和比较相等符号
+             ptr = find_a_value(); 
+    
+
+(d) bool status = false;	//为了让status在语句块外可见,需要在while语句外定义
+	while (status = find(word)) 
+        { word = get_next_word(); } 
+    if (!status) 
+        cout << "Did not find any words\n"; 
+    
