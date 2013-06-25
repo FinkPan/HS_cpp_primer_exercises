@@ -1,0 +1,37 @@
+解释下面每个循环，更正你发现的任何问题。 
+     (a) for (int *ptr = &ia, ix = 0; 
+               ix != size && ptr != ia+size; 
+               ++ix, ++ptr)   { /* ... */ } 
+     (b) for (; ;) { 
+               if (some_condition) return; 
+               // ... 
+         } 
+     (c) for (int ix = 0; ix != sz; ++ix) { /* ...*/ } 
+         if (ix != sz) 
+              // ... 
+     (d) int ix; 
+         for (ix != sz; ++ix) { /* ... */ } 
+     (e) for (int ix = 0; ix != sz; ++ix, ++ sz) { /* ... */ } 
+ 
+答:
+(a)	定义int指针ptr 并指向ia, 定义 int ix =0,
+	如果ix != size 且 ptr != ia+size, 对ix 和 ptr前自增.
+	问题: 如果ia是数组,那int *ptr = &ia,是错误的, 数组ia就能表示数组的首地址了.
+		  可以改为 int *ptr = ia,
+   
+   
+(b) 循环体无限循环,直到if语句为真时,返回.
+   
+(c) if 语句里的ix由于是在for循环体里定义,所以对if是不可见的.
+	可以改为:
+	int ix = 0;
+	for (; ix != sz; ++ix) { /* ...*/ } 
+         if (ix != sz) 
+              // ... 
+   
+(d) ix没有初始化就使用.
+	可以改为:
+	int ix = 0; 
+    for (ix != sz; ++ix) { /* ... */ } 
+   
+(e)由于ix和sz都是自增的,所以如果ix 与 sz不相等,那永远也不会相等,即为个死循环.
