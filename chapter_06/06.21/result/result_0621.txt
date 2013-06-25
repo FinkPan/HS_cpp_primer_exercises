@@ -1,0 +1,31 @@
+修改第 6.10 节最后一个习题的程序，使得它只寻找以大
+写字母开头的连续出现的单词。 
+
+答;
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+		string str1,str2;
+		cout << "Please enter some words:" ; 
+		cin >> str1  >> str2;
+		while(cin && !str1.empty() && !str2.empty())
+		{
+			if (isupper(str1[0]) && isupper(str2[0]) && str1 == str2)
+			{
+				cout << "the word: \"" << str2 << "\" is the same of the head one! \n";
+				break;
+			}
+			else
+			{
+				str1 = str2;
+				cin	 >> str2;
+			}
+			if(!cin)	//如果用户不再输入,或者输入出错.
+				cout << "there have no word repeated continuously!\n ";
+		}
+	system("pause");
+	return 0;
+}
