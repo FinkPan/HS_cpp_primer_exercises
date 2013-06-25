@@ -1,0 +1,14 @@
+对于本节的最后一个例子，跳回到 begin 标号的功能可
+以用循环更好地实现。请不使用 goto 语句重写这段代
+码。 
+
+// backward jump over declaration statement ok 
+  begin: 
+	int sz = get_size(); 
+	if (sz <= 0) { 
+		  goto begin; 
+	} 
+答:
+
+for(int sz = get_size(); sz <= 0; sz = get_size())
+	
