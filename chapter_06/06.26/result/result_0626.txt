@@ -1,0 +1,14 @@
+Exercise 
+6.26: 
+下面循环会导致什么现象的发生： 
+     string s; 
+     while (cin >> s) { 
+        assert(cin); 
+        // process s 
+     } 
+ 
+解释这种用法是否是 assert 宏的一种恰当应用。 
+
+答:循环输入字符串s,并处理s,但assert(cin);
+在这里并不是 assert 宏的一种恰当应用。
+因为当cin出错时,就退出while循环了.
