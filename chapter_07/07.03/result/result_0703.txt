@@ -1,0 +1,30 @@
+Exercise 
+7.3:  
+编写一个带有两个 int 型形参的函数，产生第一个参数
+的第二个参数次幂的值。编写程序传递两个 int 数值调
+用该函数，请检验其结果。 
+
+答:
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+int factorial(int ia, int ib)
+{
+	int result =ia;
+	//result = pow(static_cast<double>(ia),ib);	//用c++标准函数实现,需要头文件<cmath>
+	for (int i = 1; i != ib; ++i)
+	{
+		result *= ia;
+	}
+	return result;
+}
+int main()
+{
+	int na,nb;
+	cout << "input two integer to factorial: \n";
+	cin >> na >> nb;
+	cout << na << " factorial of " << nb << " is: " << factorial(na,nb) << "\n";
+	return 0;
+}
