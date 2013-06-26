@@ -1,0 +1,39 @@
+Exercise 
+6.25: 
+修改第 6.11 节习题所编写的程序，使其可以有条件地输
+出运行时的信息。例如，可以输出每一个读入的单词，用
+来判断循环是否正确地找到第一个连续出现的以大写字
+母开头的单词。分别在打开和关闭调试器的情况下编译和
+运行这个程序。 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+#define NDEBUG	//定义NDEBUG宏.
+
+int main()
+{
+	string str1,str2;
+	cout << "Please enter some words:" ; 
+	while(cin>>str1)
+	{
+		#ifndef NDEBUG	//NDEBUG 预处理变量实现有条件的调试代码
+		cout << "your word: " << str1 << "\n";
+		#endif
+
+		if (!str1.empty() && isupper(str1[0]) && str1 == str2)
+		{
+			cout << "the word: \"" << str2 << "\" is the same of the head one! \n";
+			break;
+		}
+		else
+		{
+			str2 = str1;
+		}
+		if(!cin)	//如果用户不再输入,或者输入出错.
+			cout << "there have no word repeated continuously!\n ";
+	}
+	system("pause");
+	return 0;
+}
