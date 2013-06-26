@@ -10,3 +10,16 @@ Exercise
      (c) int calc(int v1, int v1) /* ... */ } 
      (d) double square(double x) return x * x; 
  
+ 答:
+ (a)  错误,返回类型不符;可改为:
+		string f() { 
+		    string s; 
+		    // ... 
+		    return s; 
+		} 
+ (b) 错误,没有返回类型;可改为:
+		void f2(int i) { /* ... */ } 
+ (c) 错误,形参名相同;可改为:
+		int calc(int v1, int v2) /* ... */ } 
+ (d) 错误,函数体应该包含在一对花括号里;可改为
+		double square(double x) {return x * x;} 
