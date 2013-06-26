@@ -1,0 +1,26 @@
+bitset 类提供 to_ulong 操作，如果 bitset 提供的位
+数大于 unsigned long 的长度时，抛出一个 
+overflow_error 异常。编写产生这种异常的程序。 
+
+答:
+
+#include <iostream>
+#include <string>
+#include <bitset>
+using namespace std;
+int main()
+{
+	bitset<33> bs("11111111111111111111111111111111");
+	unsigned long ul;
+	try
+	{
+		if(bs.size()>32)
+			throw overflow_error("Data must refer to same ISBN"); 
+		ul = bs.to_ulong();
+	}
+	catch (overflow_error e)
+	{
+		cout << e.what();
+	}
+	return 0;
+}
