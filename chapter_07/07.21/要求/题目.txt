@@ -1,0 +1,6 @@
+Exercise 
+7.21: 
+如是函数 factorial 的终止条件为： 
+     if (val != 0) 
+ 
+会出现什么问题？ 

@@ -1,0 +1,3 @@
+ Exercise 
+7.30: 
+第 7.2.2 节的函数 is Shorter 改写为 inline 函数。

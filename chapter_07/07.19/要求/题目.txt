@@ -1,0 +1,11 @@
+Exercise 
+7.19: 
+判断下面程序是否合法；如果合法，解释其功能；如果不
+合法，更正它并解释原因。 
+     int &get(int *arry, int index) { return 
+arry[index]; } 
+     int main() { 
+         int ia[10]; 
+         for (int i = 0; i != 10; ++i) 
+              get(ia, i) = 0; 
+     } 

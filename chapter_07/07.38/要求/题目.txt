@@ -1,0 +1,8 @@
+Exercise 
+7.38: 
+给出如下声明： 
+     void manip(int, int); 
+     double dobj; 
+对于下面两组函数调用，请指出实参上每个转换的优先级
+等级（第 7.8.4 节）？ 
+     (a) manip('a', 'z');    (b) manip(55.4, dobj); 

@@ -1,0 +1,5 @@
+Exercise 
+7.7:  
+解释下面两个形参声明的不同之处：
+     void f(T); 
+     void f(T&); 

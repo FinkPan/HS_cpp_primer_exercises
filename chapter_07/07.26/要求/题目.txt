@@ -1,0 +1,5 @@
+Exercise 
+7.26: 
+用字符 's' 作为默认实参重写函数 make_plural。利用
+这个版本的函数输出单词“success”和“failure”的
+单数和复数形式。 

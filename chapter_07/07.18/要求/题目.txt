@@ -1,0 +1,10 @@
+Exercise 
+7.18: 
+下面函数存在什么潜在的运行时问题？ 
+     string &processText() { 
+         string text; 
+         while (cin >> text) { /* ... */ } 
+         // .... 
+         return text; 
+     } 
+ 

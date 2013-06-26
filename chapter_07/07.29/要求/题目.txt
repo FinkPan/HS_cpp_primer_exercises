@@ -1,0 +1,8 @@
+Exercise 
+7.29: 
+对于下面的声明和定义，你会将哪个放在头文件，哪个放
+在程序文本文件呢？为什么？ 
+     (a) inline bool eq(const BigInt&, const 
+BigInt&) {...} 
+     (b) void putValues(int *arr, int size); 
+ 

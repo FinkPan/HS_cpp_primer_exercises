@@ -1,0 +1,6 @@
+Exercise 
+7.10: 
+下面的程序虽然是合法的，但可用性还不够好，指出并改
+正该程序的局限： 
+     bool test(string& s) { return s.empty(); } 
+ 

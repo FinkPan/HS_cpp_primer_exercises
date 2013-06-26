@@ -1,0 +1,12 @@
+Exercise 
+7.35: 
+下面提供了三组函数声明，解释每组中第二个声明的效
+果，并指出哪些（如果有的话）是不合法的。 
+     (a) int calc(int, int); 
+         int calc(const int, const int); 
+ 
+     (b) int get(); 
+         double get(); 
+ 
+     (c) int *reset(int *); 
+         double *reset(double *); 

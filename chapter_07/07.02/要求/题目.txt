@@ -1,0 +1,12 @@
+Exercise 
+7.2:  
+下列哪些函数是错误的？为什么？请给出修改意见。 
+     (a) int f() { 
+             string s; 
+             // ... 
+             return s; 
+         } 
+     (b) f2(int i) { /* ... */ } 
+     (c) int calc(int v1, int v1) /* ... */ } 
+     (d) double square(double x) return x * x; 
+ 
