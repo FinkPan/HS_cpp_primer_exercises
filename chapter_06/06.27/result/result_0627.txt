@@ -1,0 +1,10 @@
+解释下面的循环： 
+     string s; 
+     while (cin >> s && s != sought) { } // empty body 
+     assert(cin); 
+     // process s 
+	 
+答:
+当输入有效,且不等于 "sought" 时.循环一直输入,直到输入无效或者s为"sought"
+时,跳出循环,进行assert(cin);语句,如果在调试情况下,当cin为无效则中断程序,
+并输出信息.当cin有效,则处理s;如果在关闭调试情况下,assert(cin);语句无效.
