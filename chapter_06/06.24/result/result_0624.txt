@@ -1,0 +1,25 @@
+Exercise 
+6.24: 
+修改上述的程序，使它能捕获这种异常并输出提示信息。
+
+
+#include <iostream>
+#include <string>
+#include <bitset>
+using namespace std;
+int main()
+{
+	bitset<33> bs("11111111111111111111111111111111");
+	unsigned long ul;
+	try
+	{
+		if(bs.size()>32)
+			throw overflow_error("Data must refer to same ISBN"); 
+		ul = bs.to_ulong();
+	}
+	catch (overflow_error e)
+	{
+		cout << e.what();
+	}
+	return 0;
+}
