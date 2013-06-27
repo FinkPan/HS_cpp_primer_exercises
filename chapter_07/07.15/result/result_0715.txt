@@ -1,0 +1,49 @@
+Exercise 
+7.15: 
+编写一个主函数 main，使用两个值作为实参，并输出它
+们的和。 
+
+答:
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main(int argc, char *argv[])
+{
+	string ca,cb;
+	int ia = 0;
+	int ib = 0;
+	if (argc == 3)
+	{
+		bool work = true;
+		ca = argv[1];
+		cb = argv[2];
+		for (int i = 0; i != ca.size(); ++i)
+		{
+			if(!isdigit(ca[i]))
+			{
+				cout << "第一个输入有非数字: \n";
+				work = false;
+				break;
+			}
+		}
+		for (int i = 0; i != cb.size(); ++i)
+		{
+			if(!isdigit(cb[i]))
+			{
+				cout << "第二个输入有非数字: \n";
+				work = false;
+				break;
+			}
+		}
+		if (work)
+		{
+			ia = stoi(ca);
+			ib = stoi(cb);
+			cout << ia << " + " << ib << " = " <<  ia + ib << "\n";
+		}
+	}
+	else
+		cout << "读取参数错误.\n";
+	return 0;
+}
