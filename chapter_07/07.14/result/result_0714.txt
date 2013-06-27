@@ -1,0 +1,22 @@
+Exercise 
+7.14: 
+编写程序求 vector<double> 对象中所有元素之和。 
+
+#include <iostream>
+#include <vector>
+using namespace std;
+double vecsum(vector<double>::const_iterator beg, vector<double>::const_iterator end)
+{
+	double sum = 0;
+	while (beg != end)
+		sum += *beg++;
+	return sum;
+}
+int main()
+{
+	vector<double> dvec(10,20);
+	vector<double>::const_iterator beg = dvec.begin();
+	vector<double>::const_iterator end = dvec.end();
+	cout << "通过传递指向容器中需要处理的元素的迭代器来传递容器 : sum = " << vecsum(beg,end) << "\n";
+	return 0;
+}
