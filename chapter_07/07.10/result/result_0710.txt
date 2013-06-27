@@ -1,0 +1,10 @@
+Exercise 
+7.10: 
+下面的程序虽然是合法的，但可用性还不够好，指出并改
+正该程序的局限： 
+     bool test(string& s) { return s.empty(); } 
+ 
+ 答:
+ 1.s为引用类型形参.函数有可能修改实参s值.可以将形参定义
+	为const 引用类型.
+	 bool test(const string& s) { return s.empty(); } 
