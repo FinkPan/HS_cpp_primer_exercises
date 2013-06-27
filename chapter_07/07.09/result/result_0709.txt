@@ -1,0 +1,10 @@
+Exercise 
+7.9:  
+将第 7.2.2 节定义的 find_val 函数的形参表中 
+occurs 的声明修改为非引用参数类型，并重新执行这个
+程序，该函数的行为发生了什么改变？ 
+
+答:
+it = find_val(ivec.begin(), ivec.end(), 42, ctr);
+
+ctr 并没有改变.
