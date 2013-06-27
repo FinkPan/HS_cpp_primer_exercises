@@ -1,0 +1,39 @@
+Exercise 
+7.13: 
+编写程序计算数组元素之和。要求编写函数三次，每次以
+不同的方法处理数组边界。 
+
+答:
+
+#include <iostream>
+using namespace std;
+int arraysum(const int *iarray,const size_t size)	//指针数组,显式传递数组大小.
+{
+	int sum = 0;
+	for (int i = 0; i != size; ++i)
+		sum += *iarray++;
+	return sum;
+}
+int arraysum(int (&iarray)[10])	//引用类型形参,只能处理固定长度数组.
+{
+	int sum = 0;
+	for (size_t i = 0; i != 10; ++i)
+		sum += iarray[i]; 
+	return sum;
+}
+int  arraysum(const int *beg, const int *end)	//传递指向数组第一个和最后一个元素的下一个位置的指针
+{
+	int sum = 0;
+	while(beg != end)
+		sum += *beg++;
+	return sum;
+}
+int main()
+{
+	int array[10] = {1,2,3,4,5,6,7,8,9,10};
+	int *beg = array;
+	cout << "指针数组,显式传递数组大小: sum = " << arraysum(array,10) << "\n";
+	cout << "引用类型形参 : sum = " << arraysum(array) << "\n";
+	cout << "传递指向数组第一个和最后一个元素的下一个位置的指针 : sum = " << arraysum(beg,beg+10) << "\n";
+	return 0;
+}
