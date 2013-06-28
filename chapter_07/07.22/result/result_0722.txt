@@ -1,0 +1,14 @@
+Exercise 
+7.22: 
+编写下面函数的原型： 
+a.  函数名为 compare，有两个形参，都是名为 matrix
+的类的引用，返回 bool 类型的值。 
+b.  函数名为 change_val，返回 vector<int> 类型的
+迭代器，有两个形参：一个是 int 型形参，另一
+个是 vector<int> 类型的迭代器。 
+提示：写函数原型时，函数名应当暗示函数的功能。考虑
+这个提示会如何影响你用的类型？ 
+
+答:
+a. bool compare(matrix &x,matrix &y);
+b. vector<int>::iterator change_val(int ival,vector<int>::iterator pose);
