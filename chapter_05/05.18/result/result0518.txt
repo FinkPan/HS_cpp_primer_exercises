@@ -19,3 +19,34 @@ int main()
 		cout << *iter++ << " size: " << iter->size() <<  endl;
 	return 0;
 }
+
+05.18vector里要求放的是指向string对象的指针，而不是string对象本身。 
+修改结果
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+int main()
+{
+	string str1;
+	
+	vector<string*> strvec;
+	size_t strsize = 0;
+	cout << "input some strings: \n";
+	while (cin >> str1)
+	{
+		string *const strin = new string();
+		*strin = str1;
+		strvec.push_back(strin);
+	}
+	vector<string*>::iterator iter = strvec.begin();
+	int i = 0;
+	while (iter != strvec.end()) 
+	{
+		cout << **iter << " size: " << (*iter)->size() <<  endl;	// (*iter)->size()  由于 ->优先级高于*,所以必须加上圆括号.
+		delete *iter;	//释放new出来的内存空间.
+		++iter;
+	}
+	return 0;
+}
