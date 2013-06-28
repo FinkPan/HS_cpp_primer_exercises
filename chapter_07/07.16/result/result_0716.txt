@@ -1,0 +1,46 @@
+Exercise 
+7.16: 
+编写程序使之可以接受本节介绍的命令行选项，并输出传
+递给 main 的实参值。 
+
+答:
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+void Usage()
+{
+	printf( "Usage: [-d] [-o] ofile data0\n" );
+	exit( 1 );
+}
+
+int main(int argc, char **argv)
+{
+	bool bd = false;
+	bool bo = false;
+	const char *pcchofile = NULL;
+	const char *pcchdata0 = NULL;
+	for (int i = 1; i < argc; ++i)
+	{
+		if (strcmp(argv[i],"-d") == 0)
+			bd = true;
+		else if (strcmp(argv[i],"-o") == 0)
+			bo = true;
+		else if( i == argc-2 )
+			pcchofile = argv[i];
+		else if(i == argc-1)
+			pcchdata0 = argv[i];
+		else
+			Usage();
+	}
+
+	if (pcchofile == NULL || pcchdata0 == NULL)
+		Usage();
+
+	cout << "-d: " << boolalpha << bd << "\n";
+	cout << "-o: " << boolalpha << bo << "\n";
+	cout << "ofile: " << noboolalpha  << pcchofile << "\n";
+	cout << "data0: " << noboolalpha  << pcchdata0 << "\n";
+	return 0;
+}
