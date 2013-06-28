@@ -6,3 +6,7 @@
 置0 :  int_quiz1 &= ~(1UL<<27);  // student number 27 failed 
 
 这样?
+
+bitset也是支持[]操作符的.
+bitset_quiz1[27] = 1;
+bitset_quiz1[27] = 0;
