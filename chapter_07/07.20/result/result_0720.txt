@@ -1,0 +1,24 @@
+Exercise 
+7.20: 
+将函数 factorial 重写为迭代函数（即非递归函数）。
+
+
+答:
+递归
+// calculate val!, which is 1*2 *3 ... * val 
+int factorial(int val) 
+{ 
+		 if (val > 1) 
+		 return factorial(val-1) * val; 
+	  return 1; 
+ } 
+ 
+ 
+迭代
+int factorial(int val) 
+{ 
+	int nresult = 1;
+	for (int i = 2; i <= val; ++i)
+		nresult *= i;
+	return nresult; 
+} 
