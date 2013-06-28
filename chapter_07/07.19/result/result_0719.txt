@@ -1,0 +1,15 @@
+Exercise 
+7.19: 
+判断下面程序是否合法；如果合法，解释其功能；如果不
+合法，更正它并解释原因。 
+     int &get(int *arry, int index) { return arry[index]; } 
+     int main() { 
+         int ia[10]; 
+         for (int i = 0; i != 10; ++i) 
+              get(ia, i) = 0; 
+     } 
+	 
+答:
+合法,函数int &get(int *arry, int index) 返回引用的函数返回一个左值.
+
+该程序完成将数组ia初始化10个元素都为0
