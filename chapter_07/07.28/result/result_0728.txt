@@ -1,0 +1,25 @@
+Exercise 
+7.28: 
+编写函数，使其在第一次调用时返回 0，然后再次调用时
+按顺序产生正整数（即返回其当前的调用次数）。
+
+答: 
+#include <iostream>
+using namespace std;
+size_t count_calls() 
+{ 
+	static size_t ctr = 0; // value will persist across calls 
+	if (0 != ctr)
+		return ++ctr; 
+	else
+	{
+			++ctr;
+			return 0; 
+	}
+} 
+int main() 
+{ 
+	for (size_t i = 0; i != 10; ++i) 
+		cout << count_calls() << endl; 
+	return 0; 
+} 
