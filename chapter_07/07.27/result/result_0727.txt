@@ -1,0 +1,27 @@
+Exercise 
+7.27: 
+解释形参、局部变量和静态局部变量的差别。并给出一个
+有效使用了这三种变量的程序例子。 
+
+答:
+形参和局部变量作用域都一样,只是定义的地方不一样而已,形参在函数参数里定义,局部变量在函数体里定义.
+静态局部变量 有关键字 static ,其作用域可以跨越函数体.当定义静态局
+部对象的函数结束时，静态局部对象不会撤销。在该函数被多次调用的过程中，
+静态局部对象会持续存在并保持它的值。
+
+size_t count_calls(size_t cnt) 
+{ 
+	size_t i = 0;
+	static size_t ctr = 0; // value will persist across calls 
+	for ( i; i != cnt; ++i)
+		cout << i << " ";
+	cout << "\n";
+	return ++ctr; 
+} 
+
+int main(int argc, char **argv)
+{
+	for (size_t i = 0; i != 10; ++i) 
+		cout << count_calls(10) << endl; 
+	return 0;
+}
