@@ -1,0 +1,9 @@
+ Exercise 
+7.30: 
+第 7.2.2 节的函数 is Shorter 改写为 inline 函数。
+
+   // compare the length of two strings 
+   inline bool isShorter(const string &s1, const string &s2) 
+   { 
+       return s1.size() < s2.size(); 
+   } 
