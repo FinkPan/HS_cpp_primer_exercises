@@ -1,0 +1,17 @@
+Exercise 
+7.25: 
+假设有如下函数声明和调用，指出哪些调用是不合法的？
+为什么？哪些是合法的但可能不符合程序员的原意？为
+什么？ 
+     // declarations 
+     char *init(int ht, int wd = 80, char bckgrnd = ' '); 
+ 
+     (a) init(); 
+     (b) init(24,10); 
+     (c) init(14, '*'); 
+ 
+ 答:
+ (a) 合法
+ (b) 合法
+ (c) 合法,但不是程序员的原意,
+     因为init(14, '*'); 被理解为char *init(14, '*', ' '); 
