@@ -1,0 +1,13 @@
+Exercise 
+8.1:  
+假设 os 是一个 ofstream 对象，下面程序做了什么？ 
+    os << "Goodbye!" << endl; 
+ 
+如果 os 是 ostringstream 对象呢？或者，os 是 ifstream 呢？ 
+
+答:
+ os << "Goodbye!" << endl;  将"Goodbye!"写到os流绑定的文件中,并刷新流回车.
+
+如果 os 是 ostringstream 对象,将"Goodbye!"写到os流绑定string中,并刷新流回车.
+
+os 是 ifstream  则发生错误. ifstream 流用 ">>" 
