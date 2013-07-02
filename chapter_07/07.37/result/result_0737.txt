@@ -1,0 +1,21 @@
+Exercise 
+7.37: 
+已知本节所列出的 f 函数的声明，判断下面哪些函数调
+用是合法的。如果有的话，列出每个函数调用的可行函
+数。如果调用非法，指出是没有函数匹配还是该调用存
+在二义性。如果调用合法，指出哪个函数是最佳匹配。 
+     (a) f(2.56, 42); 
+     (b) f(42); 
+     (c) f(42, 0); 
+     (d) f(2.56, 3.14); 
+	 
+答:
+ void f(); 
+ void f(int); 
+ void f(int, int); 
+ void f(double, double = 3.14); 
+ 
+ (a) 非法,调用存在二义性.
+ (b) 合法,可行函数:  f(int),f(double, double = 3.14); 最佳匹配:f(int)
+ (c) 合法,可行函数:  f(int, int), f(double, double = 3.14); 最佳匹配:f(int, int)
+ (d) 合法,可行函数:  f(int, int), f(double, double = 3.14); 最佳匹配:f(double, double = 3.14)
