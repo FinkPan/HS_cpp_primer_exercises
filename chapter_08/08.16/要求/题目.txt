@@ -1,0 +1,5 @@
+Exercise 
+8.16: 
+编写程序将文件中的每一行存储在 vector<string> 容
+器对象中，然后使用 istringstream 从 vector 里以每
+次读一个单词的形式读取存储的行。 

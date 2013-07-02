@@ -1,0 +1,4 @@
+Exercise 
+8.8:  
+上一个习题的程序可以不用 continue 语句实现。分别使
+用或不使用 continue 语句编写该程序。 

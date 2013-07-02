@@ -1,0 +1,7 @@
+Exercise 
+8.1:  
+假设 os 是一个 ofstream 对象，下面程序做了什么？ 
+    os << "Goodbye!" << endl; 
+ 
+如果 os 是 ostringstream 对象呢？或者，os 是 
+ifstream 呢？ 

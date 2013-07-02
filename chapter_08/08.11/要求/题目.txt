@@ -1,0 +1,5 @@
+Exercise 
+8.11: 
+对于 open_file 函数，请解释为什么在调用 open 前先
+调用 clear 函数。如果忽略这个函数调用，会出现什么
+问题？如果在 open 后面调用 clear 函数，又会怎样？ 

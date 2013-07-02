@@ -1,0 +1,5 @@
+Exercise 
+8.5:  
+导致下面的 while 终止的原因是什么？ 
+    while (cin >> i) /* . . . */ 
+ 
