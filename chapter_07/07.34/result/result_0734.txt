@@ -9,3 +9,7 @@ Exercise
      error("Invalid selection", selectVal); 
 	 
 ´ð:
+
+error(const string &str1, int nidex, int ub);
+error(const string &str2);
+error(const string &str3,char cval);
