@@ -1,0 +1,16 @@
+Exercise 
+7.38: 
+给出如下声明： 
+     void manip(int, int); 
+     double dobj; 
+对于下面两组函数调用，请指出实参上每个转换的优先级
+等级（第 7.8.4 节）？ 
+     (a) manip('a', 'z');    (b) manip(55.4, dobj); 
+	 
+答:
+(a)字符字面值是char类型,char 类型可提升为 int 型。提升后的类型与函数 
+manip(int, int) 的形参类型匹配。
+
+(b) 字面值常量55.4可以转换为int, dobj也可以转换为int.
+
+因此可知 (b)转换优先级低于(a)的转换优先级.
