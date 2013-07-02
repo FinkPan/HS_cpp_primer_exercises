@@ -1,0 +1,9 @@
+Exercise 
+7.40: 
+下面的函数调用是否合法？如果不合法，请解释原因。
+     enum Stat { Fail, Pass }; 
+     void test(Stat); 
+     test(0); 
+	 
+答:
+不合法,字面值0 无法转换为枚举类型.
