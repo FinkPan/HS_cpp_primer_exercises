@@ -1,0 +1,8 @@
+Exercise 
+8.2:  
+下面的声明是错误的，指出其错误并改正之：
+    ostream print(ostream os); 
+
+答:
+IO流不能复制或者赋值. 
+	ostream &print(ostream &os); 
