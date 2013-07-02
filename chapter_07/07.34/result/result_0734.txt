@@ -1,0 +1,11 @@
+Exercise 
+7.34: 
+定义一组名为 error 的重载函数，使之与下面的调用匹配： 
+     int index, upperBound; 
+     char selectVal; 
+     // ... 
+     error("Subscript out of bounds: ", index, upperBound); 
+     error("Division by zero"); 
+     error("Invalid selection", selectVal); 
+	 
+答:
