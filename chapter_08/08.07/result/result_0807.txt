@@ -1,0 +1,47 @@
+Exercise 
+8.7:  
+本节编写的两个程序，在打开 vector 容器中存放的任何
+文件失败时，使用 break 跳出 while 循环。重写这两个
+循环，如果文件无法打开，则输出警告信息，然后从 
+vector 中获取下一个文件名继续处理。 
+
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <vector>
+using namespace std;
+istream &readfile(istream &inputdata)
+{
+	string str;
+	while (inputdata >> str, !inputdata.eof())
+		cout << str << endl;
+	inputdata.clear();
+	return inputdata;
+}
+
+int main() 
+{ 
+	ifstream input; 
+	vector<string> files;
+	files.push_back("test1.txt");
+	files.push_back("test.txt");	// 正确的文件.
+	files.push_back("test2.txt");
+	vector<string>::const_iterator it = files.begin(); 
+	//   for each file in the vector 
+	while (it != files.end()) { 
+		input.open(it->c_str());  // open the file 
+		// if the file is ok, read and "process" the input 
+		if (!input)
+		{
+			cout << "读取 " << *it << " 文件失败.";
+			input.clear();
+			++it;
+			continue;       
+		}
+		readfile(input);
+		input.close();        // close file when we're done with it 
+		input.clear();        // reset state to ok 
+		++it;                 // increment iterator to get next file 
+	}
+	return 0; 
+} 
