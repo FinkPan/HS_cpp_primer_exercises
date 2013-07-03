@@ -1,0 +1,36 @@
+Exercise 
+8.9:  
+编写函数打开文件用于输入，将文件内容读入 string 类
+型的 vector 容器，每一行存储为该容器对象的一个元
+素。
+ 
+答:
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+istream &readfile(istream &inputdata, vector<string> &strvec)
+{
+	string str;
+	while (getline(inputdata,str), !inputdata.eof())
+		strvec.push_back(str);
+	inputdata.clear();
+	return inputdata;
+}
+
+int main() 
+{ 
+	vector<string> strvec;
+	ifstream input("test.txt",std::ifstream::in);
+	if (!input)
+		cout << "读取文件失败.";
+	else
+	{
+		readfile(input,strvec);
+		input.close();        // close file when we're done with it 
+	}
+	
+	return 0; 
+} 
