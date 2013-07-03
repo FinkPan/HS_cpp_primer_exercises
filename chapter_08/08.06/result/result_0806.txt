@@ -1,0 +1,24 @@
+Exercise 
+8.6:  
+由于 ifstream 继承了 istream，因此可将 ifstream 对
+象传递给形参为 istream 引用的函数。使用第 8.2 节第
+一个习题编写的函数读取已命名的文件。 
+
+#include <fstream>
+#include <string>
+#include <iostream>
+
+std::istream &readfile(std::istream &inputdata)
+{
+	std::string str;
+	while (inputdata >> str, !inputdata.eof())
+		std::cout << str << std::endl;
+	inputdata.clear();
+	return inputdata;
+}
+int main() 
+{ 
+	std::ifstream ifb("test.txt",std::ifstream::in);
+	readfile(ifb);
+	return 0; 
+} 
