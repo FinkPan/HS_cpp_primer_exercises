@@ -1,0 +1,34 @@
+Exercise 
+8.3:  
+编写一个函数，其唯一的形参和返回值都是 istream& 类
+型。该个函数应一直读取流直到到达文件结束符为止，还
+应将读到的内容输出到标准输出中。最后，重设流使其有
+效，并返回该流。 
+
+答:
+#include <fstream>
+#include <string>
+#include <iostream>
+
+std::istream &readfile(std::istream &inputdata)
+{
+	std::string str;
+	while (inputdata >> str, !inputdata.eof())
+		std::cout << str << std::endl;
+	inputdata.clear();
+	return inputdata;
+}
+
+int main() 
+{
+	std::filebuf fb;
+	std::string str1;
+	if (fb.open ("test.txt",std::ios::in))
+	{
+		std::istream inputos(&fb);
+		readfile(inputos);
+		fb.close();
+	}
+	  
+	return 0; 
+} 
