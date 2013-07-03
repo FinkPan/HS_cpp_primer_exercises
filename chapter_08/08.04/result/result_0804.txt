@@ -1,0 +1,23 @@
+Exercise 
+8.4:  
+通过以 cin 为实参实现调用来测试上题编写的函数。
+
+答:
+
+#include <string>
+#include <iostream>
+
+std::istream &readfile(std::istream &inputdata)
+{
+	std::string str;
+	while (inputdata >> str, !inputdata.eof())
+		std::cout << str << std::endl;
+	inputdata.clear();
+	return inputdata;
+}
+
+int main() 
+{
+	readfile(std::cin);
+	return 0; 
+} 
