@@ -1,0 +1,48 @@
+Exercise 
+8.8:  
+上一个习题的程序可以不用 continue 语句实现。分别使
+用或不使用 continue 语句编写该程序。 
+
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+istream &readfile(istream &inputdata)
+{
+	string str;
+	while (inputdata >> str, !inputdata.eof())
+		cout << str << endl;
+	inputdata.clear();
+	return inputdata;
+}
+
+int main() 
+{ 
+	ifstream input; 
+	vector<string> files;
+	files.push_back("test1.txt");
+	files.push_back("test.txt");
+	files.push_back("test2.txt");
+	vector<string>::const_iterator it = files.begin(); 
+	//   for each file in the vector 
+	while (it != files.end()) { 
+		input.open(it->c_str());  // open the file 
+		// if the file is ok, read and "process" the input 
+		if (!input)
+		{
+			cout << "读取 " << *it << " 文件失败.";
+			input.clear();
+			++it;
+		}
+		else
+		{
+			readfile(input);
+			input.close();        // close file when we're done with it 
+			input.clear();        // reset state to ok 
+			++it;                 // increment iterator to get next file 
+		}
+	}
+	return 0; 
+} 
