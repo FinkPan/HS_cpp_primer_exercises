@@ -1,0 +1,7 @@
+Exercise 
+8.12: 
+对于 open_file 函数，请解释如果程序执行 close 函数
+失败，会产生什么结果？ 
+
+答:
+如果执行 close 函数失败,则流in状态failbit 被设为true,
