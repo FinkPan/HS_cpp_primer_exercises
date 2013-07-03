@@ -1,0 +1,34 @@
+Exercise 
+8.10: 
+重写上面的程序，把文件中的每个单词存储为容器的一个
+元素。 
+
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+istream &readfile(istream &inputdata, vector<string> &strvec)
+{
+	string str;
+	while (inputdata >> str, !inputdata.eof())	//读取单词.
+		strvec.push_back(str);
+	inputdata.clear();
+	return inputdata;
+}
+
+int main() 
+{ 
+	vector<string> strvec;
+	ifstream input("test.txt",std::ifstream::in);
+	if (!input)
+		cout << "读取文件失败.";
+	else
+	{
+		readfile(input,strvec);
+		input.close();        // close file when we're done with it 
+	}
+	
+	return 0; 
+} 
